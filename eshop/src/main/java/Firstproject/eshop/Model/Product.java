@@ -22,6 +22,7 @@ public class Product
 	int categoryId;
 	int supplierId;
 	
+	
 	public int getProductId() {
 		return productId;
 	}

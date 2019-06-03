@@ -17,6 +17,7 @@ static UserDAO userDAO;
 @BeforeClass
 public static void executeFirst()
 {
+	@SuppressWarnings("resource")
 	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 	context.scan("Firstproject.eshop");
 	context.refresh();
@@ -43,7 +44,7 @@ public void addUserTest()
 @Test
 public void updateUserTest()
 {
-	UserDetail user=userDAO.getUserDetail("jason");
+	UserDetail user=userDAO.getUserDetail("moses");
 	user.setAddress("57th,ebenezar street,tirunelveli");
 	
 	assertTrue("problem in update user",userDAO.updateUser(user));

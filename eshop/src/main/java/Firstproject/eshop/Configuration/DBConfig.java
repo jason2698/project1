@@ -14,6 +14,7 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import Firstproject.eshop.Model.CartItem;
 import Firstproject.eshop.Model.Category;
 import Firstproject.eshop.Model.Product;
 import Firstproject.eshop.Model.UserDetail;
@@ -58,7 +59,7 @@ public class DBConfig
 		factory.addAnnotatedClass(Category.class);
 		factory.addAnnotatedClass(Product.class);
 		factory.addAnnotatedClass(UserDetail.class);
-		
+		factory.addAnnotatedClass(CartItem.class);
 		
 		System.out.println("---Session Factory Object is created---");
 		SessionFactory sessionFactory=factory.buildSessionFactory();

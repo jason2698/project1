@@ -19,6 +19,7 @@ static ProductDAO productDAO;
 @BeforeClass
 public static void executeFirst()
 {
+	@SuppressWarnings("resource")
 	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 	
 	context.scan("Firstproject.eshop");
@@ -31,19 +32,19 @@ public static void executeFirst()
     
 
    
-    @Test
-    public void addProductTest()
-    {
-    	Product product=new Product();
-    	product.setProductName("Raymong-Formal");
-    	product.setProductDesc("Formal shirt with Neck with Excellent color");
-    	product.setPrice(800);
-    	product.setStock(50);
-    	product.setCategoryId(3);
-    	product.setSupplierId(2);
-    	
-    	assertTrue("Problem in Adding category",productDAO.addProduct(product));
-    }
+@Test
+public void addProductTest()
+{
+	Product product=new Product();
+	product.setProductName("Raymond-Formal");
+	product.setProductDesc("Formal shirt with Neck with Excellent color");
+	product.setPrice(800);
+	product.setStock(50);
+	product.setCategoryId(3);
+	product.setSupplierId(2);
+	
+	assertTrue("Problem in Adding category",productDAO.addProduct(product));
+}
     
     
    

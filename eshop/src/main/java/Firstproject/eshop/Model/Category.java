@@ -1,4 +1,4 @@
-package Firstproject.eshop.Model;
+ package Firstproject.eshop.Model;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

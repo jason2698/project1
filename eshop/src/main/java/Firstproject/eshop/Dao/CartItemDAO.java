@@ -3,13 +3,14 @@ package Firstproject.eshop.Dao;
 import java.util.List;
 
 import Firstproject.eshop.Model.CartItem;
-import Firstproject.eshop.Model.CustomerOrder;
-import Firstproject.eshop.Model.UserDetail;
 
-public interface CartItemDAO {
-	void addToCart(CartItem cartItem);
-	UserDetail getUser(String email);
-	List<CartItem>  getCart(String email);
-	void removeCartItem(int cartItemId);
-	CustomerOrder createCustomerOrder(CustomerOrder customerOrder);
-}
+public interface CartItemDAO 
+	{
+		public boolean addCart(CartItem cart);
+		public boolean deleteCart(CartItem cart);
+		public boolean updateCart(CartItem cart);
+		public CartItem getCart(int cartItemId);
+		public List <CartItem> listCartItem(String username);
+		
+	}
+

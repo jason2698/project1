@@ -6,6 +6,7 @@ public class GeneralTest
 {
 public static void main(String arg[])
 {
+	@SuppressWarnings("resource")
 	AnnotationConfigApplicationContext context=new AnnotationConfigApplicationContext();
 	context.scan("Firstproject.eshop");
 	context.refresh();
