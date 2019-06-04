@@ -36,11 +36,11 @@ public static void executeFirst()
 public void addProductTest()
 {
 	Product product=new Product();
-	product.setProductName("Raymond-Formal");
-	product.setProductDesc("Formal shirt with Neck with Excellent color");
-	product.setPrice(800);
+	product.setProductName("Apple Iphone x");
+	product.setProductDesc("Mobile with 4G connectivity and 12MP Back camera, 8MP Front Camera");
+	product.setPrice(80000);
 	product.setStock(50);
-	product.setCategoryId(3);
+	product.setCategoryId(1);
 	product.setSupplierId(2);
 	
 	assertTrue("Problem in Adding category",productDAO.addProduct(product));
@@ -60,8 +60,8 @@ public void addProductTest()
 	public void updateProductTest()
 	{
 		Product product=productDAO.getProduct(3);
-		product.setProductName("Raymond-Formal shirt");
-		product.setPrice(1050);
+		product.setProductName("OnePlus Mobile");
+		product.setPrice(50000);
 		
 		assertTrue("Problem in deleting Product",productDAO.updateProduct(product));
 	}

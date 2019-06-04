@@ -46,11 +46,11 @@ public class CartController
 	}
 	
 	@RequestMapping("/addToCart/{productId}")
-	public String addToCart(@PathVariable("productId")int productId,@RequestParam("quantity")int quantity,Model m)
+	public String addToCart(@PathVariable("productId")int productId,@RequestParam("quantity")int quantity,Model m,HttpSession session)
 	{
 		Product product=productDAO.getProduct(productId);
 		
-		String username="jason";
+		String username=(String)session.getAttribute("username");
 		
 		CartItem cart=new CartItem();
 		cart.setProductId(product.getProductId());
@@ -71,12 +71,12 @@ public class CartController
 	}
 	
 	@RequestMapping("/deleteCartItem/{cartItemId)")
-	public String deleteCartItem(@PathVariable("cartItemId")int cartItemId,Model m)
+	public String deleteCartItem(@PathVariable("cartItemId")int cartItemId,Model m,HttpSession session)
 	{
 		CartItem cart=cartItemDAO.getCart(cartItemId);
 		cartItemDAO.deleteCart(cart);
 		
-		String username="jason";
+		String username=(String)session.getAttribute("username");
 		
 		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
 		m.addAttribute("cartItems", listCartItems);
@@ -86,14 +86,14 @@ public class CartController
 	}
 	
 	@RequestMapping("/updateCartItem/{cartItemId}")
-    public String updateCartItem(@PathVariable("cartItemId")int cartItemId,@RequestParam("quantity")int quantity,Model m)
+    public String updateCartItem(@PathVariable("cartItemId")int cartItemId,@RequestParam("quantity")int quantity,Model m,HttpSession session)
     {
 		CartItem cart=cartItemDAO.getCart(cartItemId);
 		cart.setQuantity(quantity);
 		
 		cartItemDAO.updateCart(cart);
 		
-		String username="jason";
+		String username=(String)session.getAttribute("username");
 		
 		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
 		m.addAttribute("cartItems", listCartItems);

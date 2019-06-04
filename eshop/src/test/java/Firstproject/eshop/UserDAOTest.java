@@ -44,7 +44,7 @@ public void addUserTest()
 @Test
 public void updateUserTest()
 {
-	UserDetail user=userDAO.getUserDetail("moses");
+	UserDetail user=userDAO.getUserDetail("jason");
 	user.setAddress("57th,ebenezar street,tirunelveli");
 	
 	assertTrue("problem in update user",userDAO.updateUser(user));

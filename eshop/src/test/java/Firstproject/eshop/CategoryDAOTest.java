@@ -32,8 +32,8 @@ public class CategoryDAOTest
 	    public void addCategoryTest()
 	    {
 	    	Category category=new Category();
-	    	category.setCategoryName("Tshirt");
-	    	category.setCategoryDesc("T-Shirt with round neck collar of all Brands");
+	    	category.setCategoryName("Samsung Mobile");
+	    	category.setCategoryDesc("All Samsung Mobiles");
 	    	
 	    	assertTrue("problem in Adding Category",categoryDAO.addCategory(category));
 	    }
@@ -42,7 +42,7 @@ public class CategoryDAOTest
 	    @Test
 	    public void deleteCategoryTest()
 	    {
-	    	Category category=categoryDAO.getCategory(1);
+	    	Category category=categoryDAO.getCategory(2);
 	    	
 	    	assertTrue("problem in deleting Category",categoryDAO.deleteCategory(category));
 	    }
@@ -52,12 +52,12 @@ public class CategoryDAOTest
 	    public void updateCategoryTest()
 	    {
 	        Category category=categoryDAO.getCategory(3);
-	    	category.setCategoryName("Raymond-Shirt");
+	    	category.setCategoryName("OnePlus Mobile Phone");
 	    	
 	    	assertTrue("problem in deleting Category",categoryDAO.updateCategory(category));
 	    }
 	    
-	    @Ignore
+	    
 	    @Test
 	    public void listCategoryTest()
 	    {
