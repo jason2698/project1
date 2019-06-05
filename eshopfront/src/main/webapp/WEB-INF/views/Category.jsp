@@ -1,16 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
 	<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-
+		
+	
 <%@include file="Header.jsp"%>
 <!DOCTYPE html>
-
 <html>
 <head>
 <meta charset="ISO-8859-1">
 </head>
+<body background="resources/images/bg3.jpg">
 
-<form action="<c:url value="/InsertCategory"/>" method="post">
-<table align="center">
+	<h2 align="center">Category Page</h2>
+
+	<form action="<c:url value ='/InsertCategory'/>"  method="post">
+	
+
+			<table align="center">
 				<tr>
 					<td colspan="2">Category Info</td>
 				</tr>
@@ -30,7 +35,8 @@
 						</td>
 				</tr>
 </form>
-</table>
+
+			</table>
 			</br></br>
 			<table align="center" border="1">
 				<tr>
@@ -45,10 +51,17 @@
 						<td>${category.categoryName}</td>
 						<td>${category.categoryDesc}</td>
 						<td>
-						    <a href="<c:url value="/editCategory/${category.categoryId}"/>"class="btn btn-success">Edit</a>
+						<a href="<c:url value="/editCategory/${category.categoryId}"/>"class="btn btn-success">Edit</a>
 							<a href="<c:url value="/deleteCategory/${category.categoryId}"/>"class="btn btn-danger">Delete</a>
 					</tr>
 				</c:forEach>
-				</table>
+
+			</table>
+
+		</form>
+</body>
 </html>
+
+
+
 

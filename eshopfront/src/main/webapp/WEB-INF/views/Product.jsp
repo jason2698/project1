@@ -6,7 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body background="resources/images/bg1.jpg"><><><>
+<body background="resources/images/bg1.jpg">
 <br/><br/>
 <form:form action="InsertProduct" modelAttribute="product" method="post" enctype="multipart/form-data">
 <table align="center" class="table-bordered">

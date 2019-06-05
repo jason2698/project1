@@ -33,8 +33,8 @@
     <li><a href="login"><b>Login</b></a></li>
   <li><a href="register"><b>Register</b></a></li>
   
-   <li><a href="AboutUs"><b>AboutUs</b></a></li>
-  <li><a href="ContactUs"><b>ContactUs</b></a></li>
+   <li><a href="AboutUs"><b>AboutUs</b></a></li>              <>
+  <li><a href="ContactUs"><b>ContactUs</b></a></li>           <>
      </ul>
 </c:if>
    <c:if test="${sessionScope.loggedIn}">

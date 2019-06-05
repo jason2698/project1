@@ -1,31 +1,34 @@
-<%@include file="Header.jsp"%>
-
-<h3 align="center">Login Page</h3>
-
-<div class="container">
-
-<form action="perform_login" method="post">
-<table class="table table-bordered responsive">
-	<tr class="success">
-		<td colspan="4" class="text-center">Sign In Here</td>
-	</tr>
-	<tr>
-		<td colspan="2">User Name </td>
-		<td colspan="2"> <input type="text" name="username"/></td>
-	</tr>
-	<tr>
-		<td colspan="2">Password</td>
-		<td colspan="2"> <input type="password" name="password"/></td>
-	</tr>
-	<tr>
-		<td colspan="4">
-		<center>
-		<input type="submit" value="Login" class="btn btn-success"/>
-		</center>
-	</td>
-</table>
-</form>
-
-</div>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ include file="Header.jsp" %>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Online Shopping</title>
+</head>
+<body>
+  Login Page<br>
+  	${error }<br>
+  	${msg }<br>
+  	
+  	<form action="<c:url value='/j_spring_security_check'></c:url>" method="post">
+  	
+  	<table>
+  		<tr>
+  			<td>Enter Username</td>
+  			<td><input type="text" name="j_username"></td>
+  		</tr>
+  	
+  		<tr>
+  			<td>Enter Password</td>
+  			<td><input type="password" name="j_password"></td>
+  		</tr>
+  		<tr>
+  		<td><input type="submit" value="submit"></td>
+  		</tr>
+  	
+  	</table>
+  	</form>
 </body>
 </html>

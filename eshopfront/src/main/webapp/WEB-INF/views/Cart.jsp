@@ -21,16 +21,16 @@
                 <table class="table table-striped">
 
        <thead>
-                        <tr>
+         	<tr>
                           
 
     
-                           <th scope="col">SL #</th>
-                           <th scope="col">Product Name</th>
-                           <th scope="col">Quantity</th>
-                            <th scope="col">Price</th>
-                             <th scope="col">Total Price</th>
-                              <th scope="col">Operation</th>
+                  <th scope="col">SL #</th>
+                  <th scope="col">Product Name</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">Total Price</th>
+                  <th scope="col">Operation</th>
           </tr>
        </thead>
       <tbody>
@@ -39,8 +39,7 @@
      
      <tr>
       
-     <td>${loop.count}.</td>
-
+        <td>${loop.count}.</td>
         <td>${cart.productName}</td>
         <td><input type="text" value="${cart.quantity}" name="quantity"/></td>
         <td>${cart.price}</td>
@@ -60,17 +59,14 @@
           </tbody>
           </table>
           </div>
-          </div>
-      
-        <div class="col mb-2">
-            <div class="row">
-           <div class="col-sm-12  col-md-6"><a href="<c:url value="/productdisplay"/>">Continue Shopping</a></div>
-			 <div class="col-sm-12 col-md-6 text-right"><a href="<c:url value="/orderConfirm"/>">Checkout</a></div>
-			 
-     </div>
+         </div>
+      		<div class="col mb-2">
+           	<div class="row">
+           	<div class="col-sm-12  col-md-6"><a href="<c:url value="/productdisplay"/>">Continue Shopping</a></div>
+			<div class="col-sm-12 col-md-6 text-right"><a href="<c:url value="/orderConfirm"/>">Checkout</a></div>
+		 </div>
    </div>
      </div>
-   </div>
-  </div>   
+   </div> 
 </body>
 </html>
