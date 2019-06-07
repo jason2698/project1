@@ -1,6 +1,7 @@
 package Firstproject.eshop.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,6 +17,14 @@ String address;
 boolean enabled;
 String emailId;
 String role;
+String mobilenumber;
+
+public String getMobilenumber() {
+	return mobilenumber;
+}
+public void setMobilenumber(String mobilenumber) {
+	this.mobilenumber = mobilenumber;
+}
 //Authorities authorities;
 //public Authorities getAuthorities() {
 	//return authorities;

@@ -18,7 +18,8 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
   http://www.springframework.org/schema/security/spring-security.xsd">
       
       <security:http  auto-config="true" use-expressions="true">
-      
+     
+     
 			
         
        <security:form-login login-page="/login"
@@ -26,19 +27,20 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
            login-processing-url="/perform_login"
            
            authentication-success-forward-url="/login_success"
-           authentication-failure-url="/loginerror"/>
+           authentication-failure-url="/login"></security:form-login>
          <security:logout logout-success-url="/login"
            logout-url="/perform_logout"/>
-           <security:csrf disabled="true"/>
-       
+           
+        <security:csrf disabled="true"/>
       </security:http> 
-    <security:authentication-manager>
+       <security:authentication-manager>
        <security:authentication-provider>
           <security:jdbc-user-service 
           data-source-ref="dataSource"
-           users-by-username-query="select userName,password,enabled from UserDetail where userName=?"
-           authorities-by-username-query="select userName, role from UserDetail where userName=?"/>
+           users-by-username-query="select username,password,enabled from UserDetail where username=?"
+           authorities-by-username-query="select username, role from UserDetail where username=?"/>
            
        </security:authentication-provider>
+       
     </security:authentication-manager>
      </beans:bean>

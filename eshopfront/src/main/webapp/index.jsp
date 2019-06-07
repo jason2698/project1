@@ -1,16 +1,37 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@include file="WEB-INF/views/Header.jsp" %>     
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>   
+<%@include file="WEB-INF/views/Header.jsp" %> 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="ISO-8859-1">
-<title>index</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Online Shopping</title>
+  
 </head>
 
 <body>
-<h1 align="center">WELCOME............!!!!!!!</h1>
 
- <img src ='<c:url value='/resources/images/in3.jpg'></c:url>' height="800" width="1200" alt="Generic placeholder thumbnal"> 
+ 
+  <!-- Page Content -->
+  <section>
+    <div class="container">
+   
+      <div class="row">
+        <div class="col-lg-6">
+        
+          <h1 class="mt-5" align="center"><b><i> WELCOME</i></b></h1>
+           <img src="ph5.jpg" class="user">
+        </div>
+      </div>
+    </div>
+  </section>
+
 </body>
+
 </html>

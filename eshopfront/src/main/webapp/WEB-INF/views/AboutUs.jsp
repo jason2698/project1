@@ -7,16 +7,15 @@
 <title> Online Shopping</title>
 </head>
 <%@include file="Header.jsp" %>
-<body>
+<body background="bg3.jpg">
+
 <pre>
-<b>About Us </b>
+<h1><u>About Us </u></h1>
 
 <p>
-    HERE ALL THE MOBILE DEVICES ARE AVAILABLE..
-    <h2>
+    <b>HERE ALL THE MOBILE DEVICES ARE AVAILABLE..</b></p>
     
-    Services
-    </h2>
+<h1><u>Services </u></h1>
   <ul>
    
   <li>Fast Home Delivery
@@ -25,14 +24,14 @@
   
  </ul>
 
-<h2>Available Products</h2>
-<h3>Mobiles</h3>
+<h1><u>Available Products</u></h1>
+<h2>Mobiles:</h2>
 <ul>
 
 <li> SAMSUNG
 <li>APPLE
 <li>ONEPLUS
-
+<li>VIVO
 
 </pre>
 

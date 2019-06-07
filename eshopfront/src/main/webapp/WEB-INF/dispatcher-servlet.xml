@@ -13,15 +13,17 @@
 	<mvc:annotation-driven />
 <mvc:default-servlet-handler />
 
+
+
 <mvc:resources mapping="/resources/**" location="/WEB-INF/resources/"></mvc:resources>	
-	<context:component-scan base-package="Firstproject.eshop" />
+	<context:component-scan base-package="Firstproject.eshop, eshopfront" />
 	<bean id="internalResourceViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix">
 			<value>/WEB-INF/views/</value>
 		</property>
 		<property name="suffix">
-		 <value>=".jsp"</value>
+		 <value>.jsp</value>
 		</property>
 	</bean>
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

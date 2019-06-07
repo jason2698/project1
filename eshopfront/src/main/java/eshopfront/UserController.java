@@ -1,8 +1,6 @@
 package eshopfront;
 
 import java.util.Collection;
-import java.util.List;
-
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,54 +11,87 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import Firstproject.eshop.Dao.ProductDAO;
-import Firstproject.eshop.Model.Product;
+import Firstproject.eshop.Dao.UserDAO;
+import Firstproject.eshop.Model.UserDetail;
 
 @Controller
 public class UserController 
 {
 	@Autowired
-	ProductDAO productDAO;
+    UserDAO userDao;
+
+@RequestMapping("/login_success")
+public String checkLogin(HttpSession session, Model m) 
+{
+	String page="";
+	boolean loggedIn;
 	
-	@RequestMapping("/login_siccess")
-	public String loginSuccess(HttpSession session,Model m)
+	SecurityContext sContext=SecurityContextHolder.getContext();
+
+	Authentication authentication =sContext.getAuthentication();
+
+	
+	String username=authentication.getName();
+	Collection<GrantedAuthority> roles=(Collection<GrantedAuthority>)authentication.getAuthorities();
+	
+	for(GrantedAuthority role:roles)
 	{
-		System.out.println("I am in login Success");
+		session.setAttribute("role", role.getAuthority());
 		
-		String page="";
-		boolean loggedIn=false;
+		if(role.getAuthority().equals("ROLE_ADMIN"))
 		
-		SecurityContext sContext=SecurityContextHolder.getContext();
-		Authentication authentication=sContext.getAuthentication();
-		
-		String username=authentication.getName();
-		
-		Collection<GrantedAuthority> roles=(Collection<GrantedAuthority>)authentication.getAuthorities();
-		
-		for(GrantedAuthority role:roles)
 		{
-			session.setAttribute("role", role.getAuthority());
+			loggedIn=true;
+			page="AdminHome";
+			session.setAttribute("loggedIn",loggedIn);
+			session.setAttribute("username", username);
 			
-			if(role.getAuthority().equals("ROLE_ADMIN"))
-			{
-				loggedIn=true;
-				page="AdminHome";
-				session.setAttribute("loggedIn", loggedIn);
-				session.setAttribute("username", username);
-			}
-			else
-			{
-				List<Product> productList=productDAO.getProductList();
-				m.addAttribute("productList", productList);
-				loggedIn=true;
-				page="UserHome";
-				session.setAttribute("loggedIn", loggedIn);
-				session.setAttribute("username", username);
-			}
 		}
-		return page;
-		
+		else
+	
+		{
+			loggedIn=true;
+			page="UserHome";
+			session.setAttribute("loggedIn",loggedIn);
+			session.setAttribute("username", username);
+			
+		}
 	}
+	
+	return page;
+	
+}
+
+@RequestMapping("/loginerror")
+public String loginError(Model model)
+{
+	model.addAttribute("error", "Invalid username and password");
+	return "login";
+	
+}
+
+
+@RequestMapping(value="/addUser",method=RequestMethod.POST)
+public String addUser(Model m, @RequestParam("mobilenumber")String mobilenumber,@RequestParam("username")String username,@RequestParam("password")String password,@RequestParam("customername")String customername,@RequestParam("address")String address)
+{
+	    	
+	UserDetail user=new UserDetail();
+	user.setAddress(address);
+	user.setCustomername(customername);
+	user.setEnabled(true);
+	user.setMobilenumber(mobilenumber);
+	user.setPassword(password);
+   	user.setRole("ROLE_USER");
+	
+	user.setUsername(username);
+	
+
+	userDao.registerUser(user);
+	return "login";
+	
+}
 
 }

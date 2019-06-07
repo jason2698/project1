@@ -1,17 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-    <%@ page isELIgnored="false" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<link rel="stylesheet" href="<c:url value='/resources/css/navbar.css'></c:url>">
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <style>
  .navbar-header {
  padding-top: 0;
@@ -24,7 +21,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="topnav">
-      <a class="navbar-brand"  href="#"><b>eshop</b></a>
+      <a class="navbar-brand"  href="#"><b>ESHOP</b></a>
     </div>
 
 <c:if test="${!sessionScope.loggedIn}">
@@ -33,26 +30,20 @@
     <li><a href="login"><b>Login</b></a></li>
   <li><a href="register"><b>Register</b></a></li>
   
-   <li><a href="AboutUs"><b>AboutUs</b></a></li>              <>
-  <li><a href="ContactUs"><b>ContactUs</b></a></li>           <>
+   <li><a href="AboutUs"><b>AboutUs</b></a></li>
      </ul>
 </c:if>
-   <c:if test="${sessionScope.loggedIn}">
-   <c:if test="${sessionScope.role=='admin'}">
+<c:if test="${sessionScope.loggedIn}">
+   <c:if test="${sessionScope.ROLE=='ADMIN'}">
    <ul class="nav navbar-nav">
-      <li>
-<a href="category">Category</a></li>
+      
+   <li><a href="category">Category</a></li>
    
-   <li>
-   <li>
-<a href="supplier">Supplier</a></li>
-   
-   <li>
-<a href="product">Product</a></li>
+   <li><a href="Product">Product</a></li>
     </ul>
-  
+
 </c:if>
-<c:if test="${sessionScope.role=='user'}">
+<c:if test="${sessionScope.ROLE=='USER'}">
 
  <ul class="nav navbar-nav">
       <li>
@@ -60,7 +51,6 @@
     <li>
 <a href="<c:url value="/cart"/>">Cart</a></li>
    </ul>
-   
 </c:if>
 <ul class="nav navbar-nav navbar-right">
    <li>
