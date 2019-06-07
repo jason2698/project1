@@ -1,14 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body background="resources/images/bg1.jpg">
+<body background="bg1.jpg">
 <br/><br/>
-<form:form action="InsertProduct" modelAttribute="Product" method="post" enctype="multipart/form-data">
+
+   <form:form method="POST" action="/InsertProduct" modelAttribute="Product">
+
 <table align="center" class="table-bordered">
 <tr>
      <td colspan="2">Product Info </td>
@@ -87,7 +91,6 @@
  </c:forEach>   
     
 </table>
-
 
 
 </body>

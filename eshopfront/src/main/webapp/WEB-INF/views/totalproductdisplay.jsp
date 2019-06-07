@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
 <%@include file="Header.jsp"%>
 <html>
 <head>
@@ -55,7 +57,7 @@
             <option value="5">5</option>
          </select>
        </td>
-   <td><input type="submit" value="Add To Cart" class="btn btn-warning"/></td>
+   <td><input type="submit" value="addToCart" class="btn btn-warning"/></td>
  </tr>  
 
 

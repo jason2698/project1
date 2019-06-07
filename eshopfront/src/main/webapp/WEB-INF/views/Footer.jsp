@@ -12,9 +12,9 @@
 </head>
 <body>
 <footer>     
-<li class="glyphicon glyphicon-map-marker" style="color:yellow" style="width:30px">20, OnlineMobile Shop,Chennai-66</li><br>
-<li class="glyphicon glyphicon-phone" style="color:yellow" style="width:30px">Phone: 91 8754372649</li><br>
-<li class="glyphicon glyphicon-envelope" style="color:yellow" style="width:30px">Email: jjason2698@yahoo.com</li><br> 
+<li class="glyphicon glyphicon-map-marker" style="color:red" style="width:30px">20, OnlineMobile Shop,Chennai-66</li><br>
+<li class="glyphicon glyphicon-phone" style="color:red" style="width:30px">Phone: 91 8754372649</li><br>
+<li class="glyphicon glyphicon-envelope" style="color:red" style="width:30px">Email: jjason2698@yahoo.com</li><br> 
 </footer>
 </body>
 </html>

@@ -75,7 +75,7 @@ public String loginError(Model model)
 
 
 @RequestMapping(value="/addUser",method=RequestMethod.POST)
-public String addUser(Model m, @RequestParam("mobilenumber")String mobilenumber,@RequestParam("username")String username,@RequestParam("password")String password,@RequestParam("customername")String customername,@RequestParam("address")String address)
+public String addUser(Model m, @RequestParam("mobilenumber")String mobilenumber,@RequestParam("username")String username,@RequestParam("emailId")String emailId,@RequestParam("password")String password,@RequestParam("customername")String customername,@RequestParam("address")String address)
 {
 	    	
 	UserDetail user=new UserDetail();
@@ -85,7 +85,7 @@ public String addUser(Model m, @RequestParam("mobilenumber")String mobilenumber,
 	user.setMobilenumber(mobilenumber);
 	user.setPassword(password);
    	user.setRole("ROLE_USER");
-	
+	user.setEmailId(emailId);
 	user.setUsername(username);
 	
 

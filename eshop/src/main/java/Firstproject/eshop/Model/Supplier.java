@@ -14,8 +14,15 @@ public class Supplier
       int  supplierId;
       String supplierName;
       String supplierAddr;
+      String supplierDesc;
       
-      public int getSupplierId() 
+      public String getSupplierDesc() {
+		return supplierDesc;
+	}
+	public void setSupplierDesc(String supplierDesc) {
+		this.supplierDesc = supplierDesc;
+	}
+	public int getSupplierId() 
       {
 		return supplierId;
 	}

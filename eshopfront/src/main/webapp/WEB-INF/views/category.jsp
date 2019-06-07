@@ -8,11 +8,11 @@
 <head>
 <meta charset="ISO-8859-1">
 </head>
-<body background="resources/images/bg3.jpg">
+<body background="bg1.jpg">
 
 	<h2 align="center">Category Page</h2>
 
-	<form action="<c:url value ='/InsertCategory'/>"  method="post">
+	<form action="<c:url value ="/InsertCategory"/>"  method="post">
 	
 
 			<table align="center">
@@ -21,20 +21,21 @@
 				</tr>
 				<tr>
 					<td>Category Name</td>
-					<td><input type="text" name="catName" /></td>
+					<td><input type="text" name="catName" style="border-radius: 10px;color:black"/></td>
 				</tr>
 				<tr>
 					<td>Category Desc</td>
-					<td><input type="text" name="catDesc" /></td>
+					<td><input type="text" name="catDesc"  style="border-radius: 10px" /></td>
 				</tr>
 				
 				<tr>
-					<td colspan="2"></br><center>
+					<td colspan="2">
+					</br>
+					    <center>
 							<input type="submit" value="Save Category" />
 						</center>
 						</td>
 				</tr>
-</form>
 
 			</table>
 			</br></br>
@@ -51,7 +52,7 @@
 						<td>${category.categoryName}</td>
 						<td>${category.categoryDesc}</td>
 						<td>
-						<a href="<c:url value="/editCategory/${category.categoryId}"/>"class="btn btn-success">Edit</a>
+						<a href="<c:url value="/editCategory/${category.categoryId}"/>"class="btn btn-primary btn-md">Edit</a>
 							<a href="<c:url value="/deleteCategory/${category.categoryId}"/>"class="btn btn-danger">Delete</a>
 					</tr>
 				</c:forEach>

@@ -7,7 +7,7 @@
 
 <body background="bg3.jpg">
 <div>
-<h2>AdminHome</h2>
+<h2 style="color:yellow" align="center">AdminHome</h2>
 </div>
 
 </body>

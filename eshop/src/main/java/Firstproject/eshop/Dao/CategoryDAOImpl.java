@@ -30,7 +30,7 @@ public class CategoryDAOImpl implements CategoryDAO
 	}
 
 	@Override
-	public boolean addCategory(Firstproject.eshop.Model.Category category) {
+	public boolean addCategory(Category category) {
 		try
 		{
 			sessionFactory.getCurrentSession().save(category);
@@ -43,7 +43,7 @@ public class CategoryDAOImpl implements CategoryDAO
 	}
 
 	@Override
-	public boolean deleteCategory(Firstproject.eshop.Model.Category category) {
+	public boolean deleteCategory(Category category) {
 		try
 		{
 			sessionFactory.getCurrentSession().delete(category);
@@ -56,7 +56,7 @@ public class CategoryDAOImpl implements CategoryDAO
 	}
 
 	@Override
-	public boolean updateCategory(Firstproject.eshop.Model.Category category) {
+	public boolean updateCategory(Category category) {
 		try
 		{
 			sessionFactory.getCurrentSession().update(category);
@@ -69,7 +69,7 @@ public class CategoryDAOImpl implements CategoryDAO
 	}
 
 	@Override
-	public Firstproject.eshop.Model.Category getCategory(int categoryId) {
+	public Category getCategory(int categoryId) {
 		Session session=sessionFactory.openSession();
 		Category category=(Category) session.get(Category.class, categoryId);
 		session.close();

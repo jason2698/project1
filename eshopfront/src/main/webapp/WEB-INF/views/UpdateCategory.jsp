@@ -4,7 +4,7 @@
 <head>
 <meta charset="ISO-8859-1">
 </head>
-<body background="resources/images/bg3.jpg">
+<body background="bg3.jpg">
 	<h2 algin="center">Category Page</h2>
 	
 	<form action="<c:url value ='/UpdateCategory'/>"  method="post">

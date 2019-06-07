@@ -5,9 +5,13 @@ import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import Firstproject.eshop.Model.Supplier;
 
+@Repository("supplierDAO")
+@Transactional
 public class SupplierDAOImpl implements SupplierDAO
 {
 	@Autowired

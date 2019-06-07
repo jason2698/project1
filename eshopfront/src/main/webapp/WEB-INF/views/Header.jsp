@@ -25,7 +25,7 @@
     </div>
 
 <c:if test="${!sessionScope.loggedIn}">
-         <ul class="nav navbar-nav">
+         <ul class="nav nav-tabs">
          
     <li><a href="login"><b>Login</b></a></li>
   <li><a href="register"><b>Register</b></a></li>
@@ -33,26 +33,27 @@
    <li><a href="AboutUs"><b>AboutUs</b></a></li>
      </ul>
 </c:if>
-<c:if test="${sessionScope.loggedIn}">
-   <c:if test="${sessionScope.ROLE=='ADMIN'}">
-   <ul class="nav navbar-nav">
+   <c:if test="${sessionScope.loggedIn}">
+   <c:if test="${sessionScope.ROLE==ROLE_ADMIN}">
+   <ul class="nav nav-tabs">
       
    <li><a href="category">Category</a></li>
    
-   <li><a href="Product">Product</a></li>
-    </ul>
+   <li><a href="supplier">Supplier</a></li>
+   
+   <li><a href="/product">Product</a></li>
+   </ul>
 
 </c:if>
-<c:if test="${sessionScope.ROLE=='USER'}">
-
- <ul class="nav navbar-nav">
-      <li>
+   <c:if test="${sessionScope.ROLE==ROLE_USER}">
+    <ul class="nav nav-tabs">
+    <li>
 <a href="<c:url value="/productdisplay"/>">Product Catalog</a></li>
     <li>
 <a href="<c:url value="/cart"/>">Cart</a></li>
    </ul>
 </c:if>
-<ul class="nav navbar-nav navbar-right">
+<ul class="nav nav-tabs navbar-right">
    <li>
 <a href="<c:url value="/perform_logout"/>">Logout</a></li>
 </ul>

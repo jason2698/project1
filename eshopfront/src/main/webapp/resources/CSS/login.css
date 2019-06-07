@@ -12,10 +12,16 @@ body {
 .container {
     padding: 110px;
 }
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: #ffffff!important;
     opacity: 1; /* Firefox */
     font-size:18px!important;
+}
+
+.form-action{
+	
+	
 }
 .form-login {
     background-color: rgba(0,0,0,0.55);
@@ -30,10 +36,25 @@ body {
     box-shadow:0 1px 0 #cfcfcf;
 }
 .form-control{
+	  height: 50px;
+    padding: 10px 280px;
+    font-size: 20px;
+    line-height: 1.8;
+    border-radius: 10px;
     background:transparent!important;
     color:white!important;
-    font-size: 18px!important;
+    font-size: 20px;
 }
+
+
+.input-sm {
+    height: 50px;
+    padding: 10px 280px;
+    font-size: 20px;
+    line-height: 1.8;            
+    border-radius: 10px;
+}
+
 h1{
     color:white!important;
 }
@@ -42,10 +63,11 @@ h4 {
  border-bottom-width:1px;
  padding-bottom:10px;
  text-align: center;
+ color:white;
 }
 
 .form-control {
-    border-radius: 10px;
+    border-radius: 50px;
 }
 .text-white{
     color: white!important;
@@ -54,5 +76,5 @@ h4 {
     text-align: center;
 }
 .footer p{
-    font-size: 18px;
+    font-size: 20px;
 }
