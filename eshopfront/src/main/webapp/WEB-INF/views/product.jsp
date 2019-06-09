@@ -11,7 +11,7 @@
 <body background="bg1.jpg">
 <br/><br/>
 
-   <form:form method="POST" action="/InsertProduct" modelAttribute="Product">
+   <form:form method="post" action="InsertProduct" modelAttribute="Product" enctype="multipart/form-data">
 
 <table align="center" class="table-bordered">
 <tr>
@@ -19,7 +19,7 @@
 </tr>
 <tr>
     <td>Product Name</td>
-    <td><form:input path="productName"/></td>
+       <td><form:input path="productName"/></td>
 </tr>
 <tr>
     <td>Price</td>

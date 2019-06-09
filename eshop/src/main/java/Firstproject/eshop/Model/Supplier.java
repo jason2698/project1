@@ -12,6 +12,7 @@ public class Supplier
       @Id
       @GeneratedValue
       int  supplierId;
+      
       String supplierName;
       String supplierAddr;
       String supplierDesc;

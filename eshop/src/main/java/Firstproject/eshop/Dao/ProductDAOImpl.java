@@ -2,8 +2,7 @@ package Firstproject.eshop.Dao;
 
 import java.util.List;
 
-import javax.persistence.Query;
-
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,73 +19,73 @@ public class ProductDAOImpl implements ProductDAO
 	
 	@Autowired
 	SessionFactory sessionFactory;
-	
 
-	 public boolean addProduct(Product product) 
-	{
-		try
+	public boolean addProduct(Product product) {
+		try 
 		{
-			sessionFactory.getCurrentSession().save(product);
+			sessionFactory.getCurrentSession().saveOrUpdate(product); 
 			return true;
 		}
 		catch(Exception e)
 		{
-		return false;
+			return false;
 		}
 	}
 
-	public boolean deleteProduct(Product product) 
-	{
-		try
+	public boolean deleteProduct(Product product) {
+		try 
 		{
-			sessionFactory.getCurrentSession().delete(product);
+			sessionFactory.getCurrentSession().delete(product); 
 			return true;
 		}
 		catch(Exception e)
 		{
-		return false;
+			return false;
 		}
 	}
 
-	public boolean updateProduct(Product product) 
-	{
-		try
+	public boolean updateProduct(Product product) {
+		try 
 		{
-			sessionFactory.getCurrentSession().save(product);
+			sessionFactory.getCurrentSession().saveOrUpdate(product); 
 			return true;
 		}
 		catch(Exception e)
 		{
-		return false;
+			return false;
 		}
 	}
-	
-	
-    public Product getProduct(int productId)
-    {
-	    Session session=sessionFactory.openSession();
-	    Product product=(Product) session.get(Product.class, productId);
-	    session.close();
-	    return product;
-    }
 
-	public List<Product> getProductList() 
+	public Product getProduct(int productId) {
+		Session session=sessionFactory.openSession();
+		Product product=(Product)session.get(Product.class,productId);
+		session.close();
+		return product;
+	}
+
+	
+
+	public List<Product> listProducts() 
 	{
 		Session session=sessionFactory.openSession();
-		Query query=(Query) session.createQuery("from Product");
-		List<Product> productList=((org.hibernate.Query) query).list();
+		List<Product> listProducts=(List<Product>)session.createQuery("from Product").list();
+		session.close();
+		return listProducts;
+	}
+
+	@Override
+	public List<Product> getProductListCategoryWise(int categoryId) {
+		Session session=sessionFactory.openSession();
+		Query query=session.createQuery("from Product where categoryId=:catId");
+		query.setParameter("catId", categoryId);
+		List<Product> productList=query.list();
 		session.close();
 		return productList;
 	}
+	
 
-	public List<Product> getProductListCategoryWise(int categoryId) 
-	{
-		Session session=sessionFactory.openSession();
-		Query query=(Query) session.createQuery("from Product where categoryId=catid");
-		query.setParameter("catid", categoryId);
-		List<Product> productList=((org.hibernate.Query) query).list();
-		session.close();
-		return productList;
-	}
+	
+	
+	
 
 }

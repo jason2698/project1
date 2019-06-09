@@ -18,9 +18,9 @@
 <h1><u>Services </u></h1>
   <ul>
    
-  <li>Fast Home Delivery
-  <li>Online Shopping
-  <li>Cash on Delivery
+  <b><li>Fast Home Delivery</b>
+  <b><li>Online Shopping</b>
+  <b><li>Cash on Delivery</b>
   
  </ul>
 
@@ -28,10 +28,12 @@
 <h2>Mobiles:</h2>
 <ul>
 
-<li> SAMSUNG
+<b>
+<li>SAMSUNG
 <li>APPLE
 <li>ONEPLUS
 <li>VIVO
+</b>
 
 </pre>
 

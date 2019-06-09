@@ -41,7 +41,7 @@
    
    <li><a href="supplier">Supplier</a></li>
    
-   <li><a href="/product">Product</a></li>
+   <li><a href="product">Product</a></li>
    </ul>
 
 </c:if>

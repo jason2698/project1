@@ -42,7 +42,7 @@ public class ProductController
 		Product product = new Product();
 		m.addAttribute(product);
 		
-		List<Product> listProducts=productDAO.getProductList();
+		List<Product> listProducts=productDAO.listProducts();
 		m.addAttribute("productList",listProducts);
 		
 		m.addAttribute("categoryList", this.GetCategories());
@@ -54,7 +54,7 @@ public class ProductController
 		  return "product";
 	 }
 	@RequestMapping(value="/InsertProduct",method=RequestMethod.POST)
-	public String insertProduct(@ModelAttribute("product")Product product,Model m,@RequestParam("pimage")MultipartFile filedet )
+	public String insertProduct(@ModelAttribute("Product")Product product,Model m,@RequestParam("pimage")MultipartFile filedet )
 	{
 		productDAO.addProduct(product);
 		Product product1=new Product();
@@ -91,7 +91,7 @@ public class ProductController
 			m.addAttribute("errorInfo","Error occured trying to upload image");
 
 		}
-	    List<Product> listProducts=productDAO.getProductList();
+	    List<Product> listProducts=productDAO.listProducts();
 		m.addAttribute("productList",listProducts);
 		m.addAttribute("pageinfo","Manage Product");
 		  
@@ -103,7 +103,7 @@ public class ProductController
 	@RequestMapping(value="/productdisplay")
 	public String displayallproducts(Model m)
 	{
-		List<Product> listProducts=productDAO.getProductList();
+		List<Product> listProducts=productDAO.listProducts();
 		m.addAttribute("productList",listProducts);
 		m.addAttribute("pageinfo","Product Catalog");
 		
@@ -158,7 +158,7 @@ public class ProductController
 	    m.addAttribute(product1);
 	     
 	    
-	    List<Product> listProducts=productDAO.getProductList();
+	    List<Product> listProducts=productDAO.listProducts();
 	 	m.addAttribute("productList",listProducts);
 	 	m.addAttribute("pageinfo","Manage Product");
 	 	
@@ -173,7 +173,7 @@ public class ProductController
 		m.addAttribute("categoryList", this.GetCategories());
 		m.addAttribute("supplierList", this.GetSuppliers());
 		 
-		List<Product> listProducts=productDAO.getProductList();
+		List<Product> listProducts=productDAO.listProducts();
 		Product product1=new Product();
 		m.addAttribute(product1);
 

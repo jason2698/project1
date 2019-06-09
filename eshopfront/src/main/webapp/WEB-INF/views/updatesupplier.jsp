@@ -6,7 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 </head>
-<body background="resources/images/bg6.jpg">
+<body background="resources/images/bg4.jpg">
 	<h2 algin="center">Supplier Page</h2>
 	
 	<form action="<c:url value ='/UpdateSupplier'/>"  method="post">

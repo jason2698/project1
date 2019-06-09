@@ -69,7 +69,7 @@ public void addProductTest()
 	@Test
 	public void showProductList()
 	{
-		List<Product>productList=productDAO.getProductList();
+		List<Product>productList=productDAO.listProducts();
 		
 		assertTrue("Problem in Listing the Products",productList.size()>0);
 		

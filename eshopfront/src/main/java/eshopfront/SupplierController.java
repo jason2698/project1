@@ -20,7 +20,7 @@ public class SupplierController
 	SupplierDAO supplierDAO;
 
 	@RequestMapping("/supplier")
-	public String showCategory(Model m)
+	public String showSupplier(Model m)
 	{
 		List<Supplier> listSuppliers=supplierDAO.listSuppliers();
 		
@@ -30,11 +30,12 @@ public class SupplierController
 	}
 	
 	@RequestMapping(value="/InsertSupplier",method=RequestMethod.POST)
-	public String saveCategoryDetail(@RequestParam("supName")String supplierName,@RequestParam("supDesc") String supplierDesc,Model m)
+	public String saveSupplierDetail(@RequestParam("supName")String supplierName,@RequestParam("supDesc") String supplierDesc,Model m)
 	{
 		Supplier supplier=new Supplier();
 		supplier.setSupplierName(supplierName);
 		supplier.setSupplierDesc(supplierDesc);
+		
 		supplierDAO.addSupplier(supplier);
 		
 		
@@ -48,6 +49,7 @@ public class SupplierController
 	public String deleteSupplier(@PathVariable("supplierId")int supplierId,Model m)
 	{
 		Supplier supplier=supplierDAO.getSupplier(supplierId);
+		
 		supplierDAO.deleteSupplier(supplier);
 		
 		List<Supplier> listSuppliers=supplierDAO.listSuppliers();
@@ -61,18 +63,22 @@ public class SupplierController
 	{
 		Supplier supplier=supplierDAO.getSupplier(supplierId);
 		m.addAttribute(supplier);
+		
 		return "updatesupplier";
 	}
 	
 	@RequestMapping(value="/UpdateSupplier",method=RequestMethod.POST)
-	 public String updateCategory(Model m,@RequestParam("supId")int supplierID,@RequestParam("supName")String supplierName,@RequestParam("supDesc")String supplierDesc)
+	 public String updateSupplier(Model m,@RequestParam("supId")int supplierID,@RequestParam("supName")String supplierName,@RequestParam("supDesc")String supplierDesc)
 	 {
 		 Supplier supplier=supplierDAO.getSupplier(supplierID);
 		 supplier.setSupplierName(supplierName);
 		 supplier.setSupplierDesc(supplierDesc);
+		 
 		 supplierDAO.updateSupplier(supplier);
+		 
 		 List< Supplier> listSuppliers=supplierDAO.listSuppliers();
 		 m.addAttribute("supplierList",listSuppliers);
+		 
 		 return "supplier";
 	 }
 	
