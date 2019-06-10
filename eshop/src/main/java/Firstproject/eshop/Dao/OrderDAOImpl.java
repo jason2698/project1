@@ -17,39 +17,32 @@ public class OrderDAOImpl implements OrderDAO
 	SessionFactory sessionFactory;
 
 	@Override
-	public boolean paymentProcess(OrderDetail orderDetail)
+	public boolean saveOrder(OrderDetail orderDetail) 
 	{
 		try
 		{
-			sessionFactory.getCurrentSession().save(orderDetail);
+			sessionFactory.getCurrentSession().save(orderDetail );
 			return true;
+			
 		}
 		catch(Exception e)
 		{
 			return false;
 		}
-		
 	}
+
+
+
 
 	@Override
-	public boolean updateCartItemsStatus(String username, int orderId) 
-	{
-		try
-		{
-			Session session=sessionFactory.openSession();
-			Query query=session.createQuery("update Cart set status='p',orderId=:ordid where username=:uname");
-			query.setParameter("ordid", orderId);
-			query.setParameter("uname", username);
-			int row_eff=query.executeUpdate();
-			if(row_eff>0)
-				return true;
-			else
-				return false;
-		}
-		catch(Exception e)
-		{
+	public boolean updateCart(String username, int orderId) {
+		Session session=sessionFactory.getCurrentSession();
+		Query query=session.createQuery("update Cart set Status='P',OrderId=:orderId where username=:username and status ='NP'");
+		query.setParameter("username", username);
+		int row_eff=query.executeUpdate();
+		if(row_eff>0)
+			return true;
+		else
 			return false;
-		}
 	}
-
-}
+	}

@@ -2,42 +2,40 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
-<%@include file="Header.jsp"%>
 <!DOCTYPE html>
+<%@include file="Header.jsp"%>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta charset=ISO-8859-1">
 </head>
-<body background="bg1.jpg">
+<body background="resources/images/bg1.jpg">
 <br/><br/>
 
-   <form:form action="InsertProduct" modelAttribute="Product" method="post" enctype="multipart/form-data">
+<h2 align="center">Product Page</h2>
 
-<table align="center" class="table-bordered">
-<tr>
-     <td colspan="2">Product Info </td>
-</tr>
-<tr>
-	<td>Product Id</td>
-	<td><form:input path="productId"/></td>
-</tr>
-<tr>
-    <td>Product Name</td>
-    <td><form:input path="productName"/></td>
-</tr>
-<tr>
-    <td>Price</td>
-    <td><form:input path="price"/></td>
-</tr>
-<tr>
-    <td>Stock</td>
-    <td><form:input path="stock"/></td>
-</tr>
-<tr>
-    <td>Image</td>
-    <td><form:input type="file" path="pimage"/></td>
-</tr>
-<tr>
+	<form:form action="InsertProduct" modelAttribute="product" method="post" enctype="multipart/form-data">
+	
+	<table align="center">
+				<tr>
+					<td colspan="2">Product Info</td>
+				</tr>
+				<tr>
+					<td>Product Name</td>
+					<td><form:input path="productName" style="border-radius: 10px;color:black"/></td>
+				</tr>
+				<tr>
+					<td>Price</td>
+					<td><form:input path="price" style="border-radius: 10px;color:black"/></td>
+				</tr>
+				<tr>
+					<td>Stock</td>
+					<td><form:input path="stock" style="border-radius: 10px;color:black"/></td>
+				</tr>
+				<tr>
+   					<td>Image</td>
+    				<td><form:input type="file" path="pimage"/></td>
+				</tr>
+		<tr>
     <td>Category</td>
     <td>
     <form:select path="categoryId">
@@ -46,6 +44,7 @@
     </form:select>
     </td>
 </tr>
+
 <tr>
     <td>Supplier</td>
     <td>
@@ -55,16 +54,13 @@
     </form:select>
     </td>
 </tr>
+
 <tr>
     <td>Product Desc</td>
     <td><form:input path="productDesc"/></td>
 </tr>
 <tr>
-    <td colspan="2">
-    <center>
-    <input type="submit" value="InsertProduct"/>
-    </center>
-    </td>
+    <td colspan="2"><center><input type="submit" value="InsertProduct"/></center></td>
 </tr>
 </table>		
 

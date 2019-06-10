@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 
-<body background="bg3.jpg">
+<body background="resources/images/bg3.jpg">
 <div>
 <h2 style="color:yellow" align="center">AdminHome</h2>
 </div>

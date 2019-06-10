@@ -6,10 +6,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body background="bg3.jpg">
+<body background="resources/images/bg3.jpg">
 
 <div class="row">
-<c:forEach items="${productList }" var="Product">
+<c:forEach items="${productList}" var="Product">
 
 <div class="col-sm-6 col-md-3">
  <a href="<c:url value="/totalproductdisplay/${product.productId}"/>" class="thumbnail">

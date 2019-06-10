@@ -7,7 +7,7 @@
 <title> Online Shopping</title>
 </head>
 <%@include file="Header.jsp" %>
-<body background="bg3.jpg">
+<body background="resources/images/bg3.jpg">
 
 <pre>
 <h1><u>About Us </u></h1>

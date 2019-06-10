@@ -8,7 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 </head>
-<body background="bg1.jpg">
+<body background="resources/images/bg1.jpg">
 
 	<h2 align="center">Category Page</h2>
 

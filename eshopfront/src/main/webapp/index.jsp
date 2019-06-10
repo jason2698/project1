@@ -15,7 +15,7 @@
   
 </head>
 
-<body background="bg2.jpg">
+<body background="resources/images/bg2.jpg">
 
  
   <!-- Page Content -->
@@ -26,7 +26,7 @@
         <div class="col-lg-6">
         
           <h1 class="mt-5" align="center"><i> WELCOME</i></h1>
-           <img src="ph5.jpg" class="user">
+           <img src="resources/images/ph5.jpg" class="user">
         </div>
       </div>
     </div>

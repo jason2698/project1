@@ -19,7 +19,14 @@ public class OrderDetail
 	Date orderDate;
 	int shoppingAmount;
 	String pmode;
+	int  totalAmount;
 
+	public int getTotalAmount() {
+		return totalAmount;
+	}
+	public void setTotalAmount(int totalAmount) {
+		this.totalAmount = totalAmount;
+	}
 	public int getOrderId() {
 		return orderId;
 	}

@@ -17,7 +17,7 @@
   }
   </style>
 </head>
-<body background="bg1.jpg">
+<body background="resources/images/bg1.jpg">
 
 <div class="container">
   <br>
@@ -34,27 +34,27 @@
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-      <img src='<c:url value='ph1.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+      <img src='<c:url value='resources/images/ph1.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
         <div class="carousel-caption">
        
         </div>
       </div>
 
       <div class="item">
-       <img src='<c:url value='ph2.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+       <img src='<c:url value='resources/images/ph2.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
         <div class="carousel-caption">
         
         </div>
       </div>
     
       <div class="item">
-       <img src='<c:url value='ph3.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+       <img src='<c:url value='resources/images/ph3.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
         <div class="carousel-caption">
         </div>
       </div>
 
       <div class="item">
-        <img src='<c:url value='ph6.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+        <img src='<c:url value='resources/images/ph6.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
         <div class="carousel-caption">
  
         </div>

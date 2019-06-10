@@ -93,9 +93,9 @@ public class PaymentController {
 		order.setPmode(pmode);
 		order.setShoppingAmount(grandTotal);
 		
-		orderDAO.paymentProcess(order);
+		orderDAO.saveOrder(order);
 		
-		if(orderDAO.updateCartItemsStatus(username, order.getOrderId()))
+		if(orderDAO.updateCart(username, order.getOrderId()))
 		{
 			m.addAttribute("orderInfo", order);
 			m.addAttribute("address", userDAO.getUserDetail(username).getAddress());
