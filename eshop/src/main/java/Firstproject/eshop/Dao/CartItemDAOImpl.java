@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import Firstproject.eshop.Model.CartItem;
 
-@Repository("cartDAO")
+@Repository("cartItemDAO")
 @Transactional
 public class CartItemDAOImpl implements CartItemDAO{
 

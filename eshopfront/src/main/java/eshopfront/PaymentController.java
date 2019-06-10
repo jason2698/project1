@@ -2,6 +2,8 @@ package eshopfront;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,10 +31,10 @@ public class PaymentController {
 	OrderDAO orderDAO;
 	
 	@RequestMapping("/checkout")
-	public String showOrderConfirmPage(Model m)
+	public String showOrderConfirmPage(Model m,HttpSession session)
 	{
 		
-		String username="jason";
+		String username=(String)session.getAttribute("username");
 		
 		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
 		m.addAttribute("cartItems", listCartItems);
@@ -46,9 +48,9 @@ public class PaymentController {
 	}
 	
 	@RequestMapping("/payment")
-	public String showPaymentPage(Model m)
+	public String showPaymentPage(Model m,HttpSession session)
 	{
-		String username="jason";
+		String username=(String)session.getAttribute("username");
 		
 		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
 		m.addAttribute("cartItems", listCartItems);
@@ -58,9 +60,9 @@ public class PaymentController {
 	}
 	
 	@RequestMapping(value="/updateAddr",method=RequestMethod.POST)
-	public String updateAddress(@RequestParam("addr")String addr,Model m)
+	public String updateAddress(@RequestParam("addr")String addr,Model m,HttpSession session)
 	{
-		String username="jason";
+		String username=(String)session.getAttribute("username");
 		
 		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
 		m.addAttribute("cartItems", listCartItems);
@@ -76,9 +78,9 @@ public class PaymentController {
 	}
 	
 	@RequestMapping(value="/pay",method=RequestMethod.POST)
-	public String generateReceipt(@RequestParam("pmode")String pmode,Model m)
+	public String generateReceipt(@RequestParam("pmode")String pmode,Model m,HttpSession session)
 	{
-		String username="jason";
+		String username=(String)session.getAttribute("username");
 		
 		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
 		m.addAttribute("cartItems", listCartItems);

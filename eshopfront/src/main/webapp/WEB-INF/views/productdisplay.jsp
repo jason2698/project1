@@ -12,8 +12,8 @@
 <c:forEach items="${productList }" var="Product">
 
 <div class="col-sm-6 col-md-3">
- <a href="<c:url value="/totalproductdisplay/${product.productid}"/>" class="thumbnail">
-   <img src ='<c:url value='/resources/images/${product.productid}.jpg'></c:url>' height="100" width="100" alt="Generic placeholder thumbnal"> 
+ <a href="<c:url value="/totalproductdisplay/${product.productId}"/>" class="thumbnail">
+   <img src ='<c:url value='/resources/images/${product.productId}.jpg'></c:url>' height="100" width="100" alt="Generic placeholder thumbnal"> 
  
  </a>
 

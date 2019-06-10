@@ -19,11 +19,11 @@
 				</tr>
 				<tr>
 					<td>Supplier Name</td>
-					<td><input type="text" name="supName" /></td>
+					<td><input type="text" name="supName" style="border-radius: 10px;color:black"/></td>
 				</tr>
 				<tr>
 					<td>Supplier Desc</td>
-					<td><input type="text" name="supDesc" /></td>
+					<td><input type="text" name="supDesc" style="border-radius: 10px;color:black"/></td>
 				</tr>
 				<tr>
 					<td colspan="2"><center>

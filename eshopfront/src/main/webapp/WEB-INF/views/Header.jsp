@@ -48,9 +48,9 @@
    <c:if test="${sessionScope.ROLE==ROLE_USER}">
     <ul class="nav nav-tabs">
     <li>
-<a href="<c:url value="/productdisplay"/>">Product Catalog</a></li>
+<a href="<c:url value="productdisplay"/>">Product Catalog</a></li>
     <li>
-<a href="<c:url value="/cart"/>">Cart</a></li>
+<a href="<c:url value="cart"/>">Cart</a></li>
    </ul>
 </c:if>
 <ul class="nav nav-tabs navbar-right">

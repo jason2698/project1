@@ -2,24 +2,28 @@
     pageEncoding="ISO-8859-1"%>
     <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form" %>
+<%@include file="Header.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
 </head>
 <body background="bg1.jpg">
 <br/><br/>
 
-   <form:form method="post" action="InsertProduct" modelAttribute="Product" enctype="multipart/form-data">
+   <form:form action="InsertProduct" modelAttribute="Product" method="post" enctype="multipart/form-data">
 
 <table align="center" class="table-bordered">
 <tr>
      <td colspan="2">Product Info </td>
 </tr>
 <tr>
+	<td>Product Id</td>
+	<td><form:input path="productId"/></td>
+</tr>
+<tr>
     <td>Product Name</td>
-       <td><form:input path="productName"/></td>
+    <td><form:input path="productName"/></td>
 </tr>
 <tr>
     <td>Price</td>
@@ -56,7 +60,11 @@
     <td><form:input path="productDesc"/></td>
 </tr>
 <tr>
-    <td colspan="2"><center><input type="submit" value="InsertProduct"/></center></td>
+    <td colspan="2">
+    <center>
+    <input type="submit" value="InsertProduct"/>
+    </center>
+    </td>
 </tr>
 </table>		
 
@@ -64,7 +72,7 @@
 </br>
 <table align="center" border="1" >
 <tr>
-<td>Product ID</td>
+<td>Product Id</td>
 <td>Product Name</td>
 <td>Product Description</td>
 <td>Price</td>
@@ -76,7 +84,7 @@
 
 <c:forEach items="${productList}" var="product">
 <tr>
-                          <td>${product.productid}</td>
+                          <td>${product.productId}</td>
                           <td>${product.productName}</td>
                           <td>${product.productDesc}</td>
                           <td>${product.price}</td>
@@ -84,8 +92,8 @@
                           <td>${product.categoryId}</td>
                           <td>${product.supplierId}</td>
     <td>
-    <a href="<c:url value="/editProduct/${product.productid}"/>"class="btn btn-success">Edit</a>
-    <a href="<c:url value="/deleteProduct/${product.productid}"/>"class="btn btn-danger">Delete</a>
+    <a href="<c:url value="/editProduct/${product.productId}"/>"class="btn btn-success">Edit</a>
+    <a href="<c:url value="/deleteProduct/${product.productId}"/>"class="btn btn-danger">Delete</a>
     </td>
  </tr>
  </c:forEach>   

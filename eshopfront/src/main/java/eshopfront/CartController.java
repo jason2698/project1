@@ -103,13 +103,13 @@ public class CartController
     }
 	
 	
-	public int calcGrandTotal(List<CartItem> listCartItems)
+	public int calcGrandTotal(List<CartItem> listCartItem)
 	{
 		int count=0,grandTotal=0;
 		
-		while(count<listCartItems.size());
+		while(count<listCartItem.size());
 		{
-			grandTotal=grandTotal+(listCartItems.get(count).getQuantity()*listCartItems.get(count).getPrice());
+			grandTotal=grandTotal+(listCartItem.get(count).getQuantity()*listCartItem.get(count).getPrice());
 			count++;
 		}
 		

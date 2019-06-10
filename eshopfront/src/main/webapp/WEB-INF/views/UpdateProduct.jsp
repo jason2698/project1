@@ -9,7 +9,7 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
-<form action="<c:url value="/UpdateProduct"/>" method="post">
+<form action="<c:url value="UpdateProduct"/>" method="post">
 <table align="center" class="table">
 <tr>
     <td colspan="2">
@@ -18,7 +18,7 @@
 </tr>
 <tr>
     <td>Product ID</td>
-    <td><input type="text" name="productID" value="${product.productid}" readonly/></td>
+    <td><input type="text" name="productId" value="${product.productId}" readonly/></td>
 </tr>
 <tr>
     <td>Product Name</td>
@@ -39,11 +39,11 @@
 
 <tr>
     <td>Product's CategoryID</td>
-    <td><input type="text" name="categoryID" value="${product.categoryId}"  /></td>
+    <td><input type="text" name="categoryId" value="${product.categoryId}"  /></td>
 </tr>
 <tr>
     <td>Product's SupplierID</td>
-    <td><input type="text" name="supplierID" value="${product.supplierId}"  /></td>
+    <td><input type="text" name="supplierId" value="${product.supplierId}"  /></td>
 </tr>
 <tr>
     <td colspan=2 align="center"><input type="submit" value="Update Product"/></td>

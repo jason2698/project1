@@ -8,7 +8,7 @@
 </head>
 <body>
 <br/><br/>
-<form action="<c:url value="/addToCart/${product.productid}"/>" method="get">
+<form action="<c:url value="/addToCart/${product.productId}"/>" method="get">
   
 <table class="table-bordered">
 <tr>
@@ -19,7 +19,7 @@
     
     </td>
     <td>Product ID</td>
-    <td>${product.productid}</td>
+    <td>${product.productId}</td>
 </tr>
 <tr>
     <td>Product Name</td>

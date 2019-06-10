@@ -111,11 +111,11 @@ public class ProductController
 	}
 	
 
-	@RequestMapping(value="/totalproductdisplay/{productID}")
-	public String totalproductdisplay(@PathVariable("productID")int productID,Model m)
+	@RequestMapping(value="/totalproductdisplay/{productId}")
+	public String totalproductdisplay(@PathVariable("productId")int productId,Model m)
 	{
 		m.addAttribute("pageinfo","Product Information");
-		Product product=productDAO.getProduct(productID);
+		Product product=productDAO.getProduct(productId);
 		m.addAttribute("product",product);
 		
 		return "totalproductdisplay";
@@ -149,7 +149,7 @@ public class ProductController
 	}
 
 	@RequestMapping(value="/UpdateProduct",method=RequestMethod.POST)
-	public String updateProduct(@ModelAttribute("product")Product product,Model m)
+	public String updateProduct(@ModelAttribute("Product")Product product,Model m)
 	{ 
 		m.addAttribute("categoryList", this.GetCategories());
 		m.addAttribute("supplierList", this.GetSuppliers());
@@ -164,10 +164,10 @@ public class ProductController
 	 	
 	 	return "product";
 	}
-	@RequestMapping(value="/deleteProduct/{productID}")
-	public String deleteProduct(@PathVariable("productID")int productID,Model m)
+	@RequestMapping(value="/deleteProduct/{productId}")
+	public String deleteProduct(@PathVariable("productId")int productId,Model m)
 	{
-		Product product=productDAO.getProduct(productID);
+		Product product=productDAO.getProduct(productId);
 		productDAO.deleteProduct(product);
 		 
 		m.addAttribute("categoryList", this.GetCategories());
@@ -183,10 +183,10 @@ public class ProductController
 		return "product";
 	}
 
-	@RequestMapping(value="/editProduct/{productID}")
-	public String editProduct(Model m,@PathVariable("productID")int productID)
+	@RequestMapping(value="/editProduct/{productId}")
+	public String editProduct(Model m,@PathVariable("productId")int productId)
 	{
-		Product product=productDAO.getProduct(productID);
+		Product product=productDAO.getProduct(productId);
 		m.addAttribute(product);
 		
 		m.addAttribute("pageinfo","Manage Product");
