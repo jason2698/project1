@@ -48,7 +48,7 @@
  </thead>
   <tbody>
 		<c:forEach items="${listCart}" var="cart">
-	<form action="<c:url value="/updateCart/${cart.cartId}"/>" method="get">
+	<form action="<c:url value="/updateCartItem/${cart.cartId}"/>" method="get">
 
 				<tr>
 				

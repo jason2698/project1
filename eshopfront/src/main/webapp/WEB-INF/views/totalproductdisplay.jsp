@@ -1,5 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+<!DOCTYPE html>
+ 
 <%@include file="Header.jsp"%>
 <html>
 <head>
@@ -8,13 +14,13 @@
 </head>
 <body>
 <br/><br/>
-<form action="<c:url value="/addToCart/${product.productId}"/>" method="get">
-  
+<form action="<c:url value="addToCart/${product.productId}"/>" method="get">
+<center>
 <table class="table-bordered">
 <tr>
     <td rowspan="7">
   
-   <img src ='<c:url value='/resources/images/${product.productid}.jpg'></c:url>' height="70" width="70" alt="Generic placeholder thumbnal"> 
+   <img src ='<c:url value='/resources/images/${product.productId}.jpg'></c:url>' height="70" width="70" alt="Generic placeholder thumbnal"> 
     
     
     </td>
@@ -57,12 +63,12 @@
             <option value="5">5</option>
          </select>
        </td>
-   <td><input type="submit" value="addToCart" class="btn btn-warning"/></td>
+   <td><input type="submit" value="Add To Cart" class="btn btn-warning"/></td>
  </tr>  
 
 
 </table>
 </form>
-
+</center>  
 </body>
 </html>

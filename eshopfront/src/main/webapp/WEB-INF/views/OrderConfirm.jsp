@@ -21,16 +21,16 @@
 			
 		</tr>
 
-		<c:forEach items="${listCart}" var="cart">
-	<form action="<c:url value="/updateCart/${cart.cartId}"/>" method="post">
+		<c:forEach items="${listCartItem}" var="CartItem">
+	<form action="<c:url value="updateCartItem/${cartItem.cartItemId}"/>" method="post">
 
 				<tr>
 				
 					<td></td>
-					<td>${cart.productName}</td>
-					<td>${cart.quantity}</td>
-					<td>${cart.price}</td>
-					<td>${cart.quantity * cart.price}/-</td>
+					<td>${cartItem.productName}</td>
+					<td>${cartItem.quantity}</td>
+					<td>${cartItem.price}</td>
+					<td>${cartItem.quantity * cartItem.price}/-</td>
 					
 		</tr>
 		</form>
@@ -41,7 +41,7 @@
      <form action="updateAddress" method="get">
    <td colsapn="2">Address</td>
     <td colspan="4">
-      <textarea  name="address" rows="5" cols="30">${addr}</textarea>
+      <textarea  name="address" rows="5" cols="30">${address}</textarea>
       
       </td>
       <td>

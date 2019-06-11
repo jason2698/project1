@@ -19,6 +19,7 @@
 </head>
 <body background="resources/images/bg1.jpg">
 
+<h4 align="right"> Welcome User</h4>
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">

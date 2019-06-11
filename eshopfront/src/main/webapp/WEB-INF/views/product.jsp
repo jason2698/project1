@@ -33,12 +33,12 @@
 				</tr>
 				<tr>
    					<td>Image</td>
-    				<td><form:input type="file" path="pimage"/></td>
+    				<td><form:input type="file" path="pimage" style="border-radius: 10px;color:black"/></td>
 				</tr>
 		<tr>
     <td>Category</td>
     <td>
-    <form:select path="categoryId">
+    <form:select path="categoryId" style="border-radius: 10px;color:black">
     <form:option value="0" label="--Select Category--"/>
     <form:options items="${categoryList}"/>
     </form:select>
@@ -48,7 +48,7 @@
 <tr>
     <td>Supplier</td>
     <td>
-    <form:select path="supplierId">
+    <form:select path="supplierId" style="border-radius: 10px;color:black">
     <form:option value="0" label="--Select Supplier--"/>
     <form:options items="${supplierList}"/>
     </form:select>
@@ -57,10 +57,10 @@
 
 <tr>
     <td>Product Desc</td>
-    <td><form:input path="productDesc"/></td>
+    <td><form:input path="productDesc" style="border-radius: 10px;color:black"/></td>
 </tr>
 <tr>
-    <td colspan="2"><center><input type="submit" value="InsertProduct"/></center></td>
+    <td colspan="2"><center><input type="submit" value="InsertProduct" style="border-radius: 10px;color:black"/></center></td>
 </tr>
 </table>		
 

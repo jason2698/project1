@@ -37,24 +37,23 @@ public String checkLogin(HttpSession session, Model m)
 	String username=authentication.getName();
 	Collection<GrantedAuthority> roles=(Collection<GrantedAuthority>)authentication.getAuthorities();
 	
-	for(GrantedAuthority role:roles)
+	for(GrantedAuthority Role:roles)
 	{
-		session.setAttribute("role", role.getAuthority());
-		
-		if(role.getAuthority().equals("ROLE_ADMIN"))
+		session.setAttribute("ROLE", Role.getAuthority());
+		if(Role.getAuthority().equals("ROLE_USER"))
 		
 		{
 			loggedIn=true;
-			page="AdminHome";
+			page="UserHome";
 			session.setAttribute("loggedIn",loggedIn);
 			session.setAttribute("username", username);
-			
+
 		}
 		else
 	
 		{
 			loggedIn=true;
-			page="UserHome";
+			page="AdminHome";
 			session.setAttribute("loggedIn",loggedIn);
 			session.setAttribute("username", username);
 			

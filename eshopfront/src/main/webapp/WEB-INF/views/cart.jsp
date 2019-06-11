@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
 <%@include file="Header.jsp"%>
 
 <!DOCTYPE html>
@@ -6,7 +8,7 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body background="resources/images/bg3.jpg">
+<body background="resources/images/bg1.jpg">
 
 
  <section class="jumbotron text-center">
@@ -22,9 +24,6 @@
 
        <thead>
          	<tr>
-                          
-
-    
                   <th scope="col">SL #</th>
                   <th scope="col">Product Name</th>
                   <th scope="col">Quantity</th>
@@ -34,8 +33,8 @@
           </tr>
        </thead>
       <tbody>
-      <c:forEach items="${listCart}" var="cart" varStatus="loop">
-      <form action="<c:url value="/updateCart/${cart.cartId}"/>" method="get">
+      <c:forEach items="${listCartItem}" var="cart" varStatus="loop">
+      <form action="<c:url value="updateCartItem/${cart.cartItemId}"/>" method="get">
      
      <tr>
       
@@ -43,10 +42,10 @@
         <td>${cart.productName}</td>
         <td><input type="text" value="${cart.quantity}" name="quantity"/></td>
         <td>${cart.price}</td>
-        <td>${cart.quantity * cart.price}/-</td>
+        <td>${cart.quantity * cartItem.price}/-</td>
         <td>
             <input type="submit" value="Update" class="btn btn-success"/>
-            <a class="btn btn-danger" href="<c:url value="/deleteCart/${cart.cartId}"/>">Delete</a>
+            <a class="btn btn-danger" href="<c:url value="/deleteCartItem/${cart.cartItemId}"/>">Delete</a>
         </td>
         </tr>
         </form>
@@ -63,7 +62,7 @@
       		<div class="col mb-2">
            	<div class="row">
            	<div class="col-sm-12  col-md-6"><a href="<c:url value="/productdisplay"/>">Continue Shopping</a></div>
-			<div class="col-sm-12 col-md-6 text-right"><a href="<c:url value="/orderConfirm"/>">Checkout</a></div>
+			<div class="col-sm-12 col-md-6 text-right"><a href="<c:url value="/OrderConfirm"/>">Checkout</a></div>
 		 </div>
    </div>
      </div>

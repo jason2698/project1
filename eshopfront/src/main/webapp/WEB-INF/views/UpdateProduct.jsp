@@ -9,7 +9,7 @@
 <meta charset="ISO-8859-1">
 </head>
 <body>
-<form action="<c:url value="UpdateProduct"/>" method="post">
+<form action="<c:url value='/UpdateProduct'/>" method="post">
 <table align="center" class="table">
 <tr>
     <td colspan="2">
@@ -46,7 +46,7 @@
     <td><input type="text" name="supplierId" value="${product.supplierId}"  /></td>
 </tr>
 <tr>
-    <td colspan=2 align="center"><input type="submit" value="Update Product"/></td>
+    <td colspan=2 align="center"><input type="submit" value="Update Product" class="btn btn-success"/></td>
 </tr>    
 
 

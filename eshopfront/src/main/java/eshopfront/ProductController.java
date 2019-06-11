@@ -63,7 +63,7 @@ public class ProductController
 		m.addAttribute("categoryList", this.GetCategories());
 		m.addAttribute("supplierList", this.GetSuppliers());
 		
-		String imgpath= "";
+		String imgpath= "C:/Users/HP/git/project1/eshopfront/src/main/webapp/WEB-INF/resources/images/";
 		imgpath=imgpath+String.valueOf(product.getProductId())+".jpg";
 		File image=new File(imgpath);
 		if(!filedet.isEmpty())
@@ -120,9 +120,6 @@ public class ProductController
 		
 		return "totalproductdisplay";
 	}
-
-
-
 
 
 	public LinkedHashMap<Integer,String> GetCategories()

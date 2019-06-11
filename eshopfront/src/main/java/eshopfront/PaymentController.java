@@ -104,7 +104,7 @@ public class PaymentController {
 		else
 		{
 			System.out.println("Not Completed");
-			return "Cart";
+			return "cart";
 		}
 	}
 	

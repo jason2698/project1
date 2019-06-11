@@ -35,7 +35,7 @@ public class OrderController {
 		m.addAttribute("listCart",listCartItem);
 		m.addAttribute("grandTotal", this.calGrandTotalPrice(listCartItem));
 		
-		return "Cart";
+		return "cart";
 	}
 	
 	
@@ -72,7 +72,7 @@ public class OrderController {
 		m.addAttribute("listCart", listCartItem);
 		m.addAttribute("grandTotal", this.calGrandTotalPrice(listCartItem));
 		
-		return "Receipt";
+		return "receipt";
 	}
 	
 	public int calGrandTotalPrice(List<CartItem> listCartItem)

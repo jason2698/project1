@@ -19,7 +19,7 @@ public class OrderDetail
 	Date orderDate;
 	int shoppingAmount;
 	String pmode;
-	int  totalAmount;
+	int totalAmount;
 
 	public int getTotalAmount() {
 		return totalAmount;

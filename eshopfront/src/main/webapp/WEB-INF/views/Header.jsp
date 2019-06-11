@@ -34,7 +34,7 @@
      </ul>
 </c:if>
    <c:if test="${sessionScope.loggedIn}">
-   <c:if test="${sessionScope.ROLE==ROLE_ADMIN}">
+   <c:if test="${sessionScope.ROLE eq 'ROLE_ADMIN'}">
    <ul class="nav nav-tabs">
       
    <li><a href="category">Category</a></li>
@@ -45,12 +45,12 @@
    </ul>
 
 </c:if>
-   <c:if test="${sessionScope.ROLE==ROLE_USER}">
+   <c:if test="${sessionScope.ROLE eq 'ROLE_USER'}">
     <ul class="nav nav-tabs">
     <li>
-<a href="<c:url value="productdisplay"/>">Product Catalog</a></li>
+<a href="<c:url value="/productdisplay"/>">Product Catalog</a></li>
     <li>
-<a href="<c:url value="cart"/>">Cart</a></li>
+<a href="<c:url value="/cart"/>">Cart</a></li>
    </ul>
 </c:if>
 <ul class="nav nav-tabs navbar-right">

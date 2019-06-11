@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,6 +18,7 @@ import Firstproject.eshop.Model.CartItem;
 import Firstproject.eshop.Model.Product;
 import Firstproject.eshop.Model.UserDetail;
 
+@Controller
 public class CartController 
 {
 	@Autowired
@@ -39,35 +41,33 @@ public class CartController
 		user.setAddress(address);
 		userDAO.updateUser(user);
 		m.addAttribute("listCart",listCart);
-		m.addAttribute("grandTotal", this.calcGrandTotal(listCart));
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCart));
 		m.addAttribute("addr",user.getAddress());
 		
 		return "OrderConfirm";
 	}
 	
-	@RequestMapping("/addToCart/{productId}")
-	public String addToCart(@PathVariable("productId")int productId,@RequestParam("quantity")int quantity,Model m,HttpSession session)
+	
+	
+	
+	@RequestMapping("/totalproductdisplay/addToCart/{productId}")
+	public String addCart(@RequestParam("quantity")int quantity,@PathVariable("productId")int productId,Model m, HttpSession session)
 	{
 		Product product=productDAO.getProduct(productId);
-		
 		String username=(String)session.getAttribute("username");
 		
 		CartItem cart=new CartItem();
 		cart.setProductId(product.getProductId());
 		cart.setProductName(product.getProductName());
-		cart.setQuantity(quantity);
 		cart.setPrice(product.getPrice());
+		cart.setStatus(username);
+		cart.setQuantity(quantity);
 		cart.setUserName(username);
-		cart.setStatus("NP");
-		
 		cartItemDAO.addCart(cart);
-		
-		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
-		m.addAttribute("cartItems", listCartItems);
-		m.addAttribute("grandTotal", this.calcGrandTotal(listCartItems));
-		
-		return "Cart";
-		
+		List<CartItem>listCartItem=cartItemDAO.listCartItem(username);
+		m.addAttribute("listCart",listCartItem);
+		m.addAttribute("grandTotal",this.calcGrandTotalPrice(listCartItem));
+		return "cart";
 	}
 	
 	@RequestMapping("/deleteCartItem/{cartItemId)")
@@ -78,11 +78,29 @@ public class CartController
 		
 		String username=(String)session.getAttribute("username");
 		
-		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
-		m.addAttribute("cartItems", listCartItems);
-		m.addAttribute("grandTotal", this.calcGrandTotal(listCartItems));
+		List<CartItem> listCartItem=cartItemDAO.listCartItem(username);
+		m.addAttribute("listCartItem", listCartItem);
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		
-		return "Cart";
+		return "cart";
+	}
+	
+	@RequestMapping("/OrderConfirm")
+	public String orderConfirm(Model m, HttpSession session)
+	{
+		
+		String username=(String)session.getAttribute("username");
+		System.out.println("from order confirm"+username);
+		List<CartItem>listCartItem=cartItemDAO.listCartItem(username);
+		UserDetail user=userDAO.getUserDetail(username);
+		
+		System.out.println("from cart contoller "+user);
+		m.addAttribute("cartItems", listCartItem);
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
+		m.addAttribute("address",user.getAddress());
+				
+		
+		return "OrderConfirm";
 	}
 	
 	@RequestMapping("/updateCartItem/{cartItemId}")
@@ -95,24 +113,23 @@ public class CartController
 		
 		String username=(String)session.getAttribute("username");
 		
-		List<CartItem> listCartItems=cartItemDAO.listCartItem(username);
-		m.addAttribute("cartItems", listCartItems);
-		m.addAttribute("grandTotal", this.calcGrandTotal(listCartItems));
+		List<CartItem> listCartItem=cartItemDAO.listCartItem(username);
+		m.addAttribute("cartItems", listCartItem);
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		
-		return "Cart";
+		return "cart";
     }
 	
 	
-	public int calcGrandTotal(List<CartItem> listCartItem)
+	public int calcGrandTotalPrice(List<CartItem> listCartItem)
 	{
-		int count=0,grandTotal=0;
 		
-		while(count<listCartItem.size());
+		int count=0,grandTotal=0;
+		while(count<listCartItem.size())
 		{
 			grandTotal=grandTotal+(listCartItem.get(count).getQuantity()*listCartItem.get(count).getPrice());
 			count++;
 		}
-		
 		return grandTotal;
 	}
 }
