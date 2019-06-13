@@ -21,7 +21,8 @@ public class PageController
 	{
 	return "login";
 	}
-	
+
+
 @RequestMapping("/register")
 	
 	public String showRegister()
@@ -35,4 +36,12 @@ public class PageController
 	{
 		return "AboutUs";
 	}
+
+@RequestMapping("/ContactUs")
+
+	public String showContactUs()
+	{
+		return "ContactUs";
+	}
 }
+

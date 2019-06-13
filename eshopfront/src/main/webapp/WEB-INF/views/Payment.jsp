@@ -7,20 +7,20 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body background="resources/images/bg3.jpg">
+<body background="resources/images/bg8.jpg">
 
-<table class="table table-bordered" width="50%" align="center">
+<table class="table table-dark" width="100%" align="center">
 
    <tr>
-        <td>Total Amount</td>
-        <td>RS.${grandTotal}/-</td>
+        <td><b>Total Amount</b></td>
+        <td><b>RS.${grandTotal}/-</b></td>
         
         </tr>
     </table>
     <br/><br/><br/><br/><br/>
     
   <div class="container"> 
- <form action="<c:url value="/receipt"/>" method="post">
+ <form action="<c:url value="receipt"/>" method="post">
   <div class="row">
         <div class="col-xs-12 col-md-4">
             <div class="panel panel-default">
@@ -46,7 +46,7 @@
             </tr>
             
             <div class="input-group">
-                            <input type="text" value="0987-2345-9087-8000"class="form-control" id="cardNumber" placeholder="Valid Card Number"
+                            <input type="text" value="7987-2345-9087"class="form-control" id="cardNumber" placeholder="Valid Card Number"
                                 required autofocus />
                             <span class="input-group-addon"><span class="glyphicon glyphicon-lock"></span></span>
                         </div>

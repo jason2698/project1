@@ -31,9 +31,10 @@ public class OrderController {
 		
 		
 		String username=(String)session.getAttribute("username");
+		System.out.println(username);
 		List<CartItem> listCartItem=cartItemDAO.listCartItem(username);
-		m.addAttribute("listCart",listCartItem);
-		m.addAttribute("grandTotal", this.calGrandTotalPrice(listCartItem));
+		m.addAttribute("listCartItem",listCartItem);
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		
 		return "cart";
 	}
@@ -45,7 +46,8 @@ public class OrderController {
 	{
 		String username=(String)session.getAttribute("username");
 		List<CartItem> listCartItem=cartItemDAO.listCartItem(username);
-		m.addAttribute("grandTotal", this.calGrandTotalPrice(listCartItem));
+		
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		
 		return "Payment";
 	}
@@ -55,27 +57,27 @@ public class OrderController {
 	public String showReceipt(@RequestParam("pmode")String pmode,Model m, HttpSession session )
 	{
 		String username=(String)session.getAttribute("username");
-		List<CartItem> listCartItem=cartItemDAO.listCartItem(username);
+		List<CartItem>listCartItem=cartItemDAO.listCartItem(username);
 		
 		OrderDetail order=new OrderDetail();
 		order.setUsername(username);
 		order.setOrderDate(new java.util.Date());
 		order.getOrderId();
 		order.setPmode(pmode);
-		order.setTotalAmount(this.calGrandTotalPrice(listCartItem));
+		order.setTotalAmount(this.calcGrandTotalPrice(listCartItem));
 		orderDAO.saveOrder(order);
 		int orderId =order.getOrderId();
 		System.out.println(orderId);
 		orderDAO.updateCart(username, order.getOrderId());
 		m.addAttribute("orderData",orderId);
 	   // m.session.setAttribute("order", orderId);
-		m.addAttribute("listCart", listCartItem);
-		m.addAttribute("grandTotal", this.calGrandTotalPrice(listCartItem));
+		m.addAttribute("listCartItem", listCartItem);
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		
 		return "receipt";
 	}
 	
-	public int calGrandTotalPrice(List<CartItem> listCartItem)
+	public int calcGrandTotalPrice(List<CartItem> listCartItem)
 	{
 		int grandTotal=0;
 		int count=0;

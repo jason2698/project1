@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 
-<body>
+<body background="resources/images/bg.jpg">
 
 <div class="container">
     <div class="row">
@@ -40,15 +40,14 @@
 		
 			
 			<th>Product Name</th>
-			<th>Quantity</th>
-			<th class="text-center">Price</th>
-			<th class="text-center">Total Price</th>
-			
+			<th>Quantity</th>			
+ 			<th>Price</th>
+ 			<th>Total Price</th>
 		</tr>
  </thead>
   <tbody>
-		<c:forEach items="${listCart}" var="cart">
-	<form action="<c:url value="/updateCartItem/${cart.cartId}"/>" method="get">
+		<c:forEach items="${listCartItem}" var="cart">
+	<form action="<c:url value="/updateCart/${cart.cartItemId}"/>" method="get">
 
 				<tr>
 				

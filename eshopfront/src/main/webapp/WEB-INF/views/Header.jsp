@@ -14,23 +14,30 @@
  padding-top: 0;
  padding-bottom: 0;
  height: 35px;
+
  }
+ 
 </style>
 </head>
 <body>
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="topnav">
-      <a class="navbar-brand"  href="#"><b>ESHOP</b></a>
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">ESHOP</a>
     </div>
 
 <c:if test="${!sessionScope.loggedIn}">
-         <ul class="nav nav-tabs">
+         <ul class="nav nav-tabs navbar-right">
          
-    <li><a href="login"><b>Login</b></a></li>
-  <li><a href="register"><b>Register</b></a></li>
+    <li><a href="login"><b><span class="glyphicon glyphicon-log-in"></span> Login</b></a></li>
+  <li><a href="register"><b><span class="glyphicon glyphicon-user"></span>Sign-up</b></a></li>
+  </ul>
   
-   <li><a href="AboutUs"><b>AboutUs</b></a></li>
+  <ul class="nav nav-tabs">
+  	
+   <li><a href="AboutUs">AboutUs</a></li>
+    <li><a href="ContactUs">ContactUs</a></li>
+   
      </ul>
 </c:if>
    <c:if test="${sessionScope.loggedIn}">
@@ -54,8 +61,7 @@
    </ul>
 </c:if>
 <ul class="nav nav-tabs navbar-right">
-   <li>
-<a href="<c:url value="/perform_logout"/>">Logout</a></li>
+   <li><a href="<c:url value="/perform_logout"/>">Logout</a></li>
 </ul>
 
 </c:if>

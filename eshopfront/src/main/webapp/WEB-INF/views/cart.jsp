@@ -8,12 +8,12 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body background="resources/images/bg1.jpg">
+<body background="resources/images/bg8.jpg">
 
 
  <section class="jumbotron text-center">
     <div class="container">
-        <h1 class="jumbotron-heading">Your Order</h1>
+        <h1 class="jumbotron-heading" >Your Order</h1>
      </div>
 </section> 
 <div class="container mb-4">
@@ -34,7 +34,7 @@
        </thead>
       <tbody>
       <c:forEach items="${listCartItem}" var="cart" varStatus="loop">
-      <form action="<c:url value="updateCartItem/${cart.cartItemId}"/>" method="get">
+      <form action="<c:url value="/updateCartItem/${cart.cartItemId}"/>" method="get">
      
      <tr>
       
@@ -42,7 +42,7 @@
         <td>${cart.productName}</td>
         <td><input type="text" value="${cart.quantity}" name="quantity"/></td>
         <td>${cart.price}</td>
-        <td>${cart.quantity * cartItem.price}/-</td>
+        <td>${cart.quantity * cart.price}/-</td>
         <td>
             <input type="submit" value="Update" class="btn btn-success"/>
             <a class="btn btn-danger" href="<c:url value="/deleteCartItem/${cart.cartItemId}"/>">Delete</a>
@@ -61,8 +61,8 @@
          </div>
       		<div class="col mb-2">
            	<div class="row">
-           	<div class="col-sm-12  col-md-6"><a href="<c:url value="/productdisplay"/>">Continue Shopping</a></div>
-			<div class="col-sm-12 col-md-6 text-right"><a href="<c:url value="/OrderConfirm"/>">Checkout</a></div>
+           	<div class="col-sm-12  col-md-6" style="background-color:white"><a href="<c:url value="/productdisplay"/>">Continue Shopping</a></div>
+			<div class="col-sm-12 col-md-6 text-right" style="background-color:white"><a href="<c:url value="/OrderConfirm"/>">Checkout</a></div>
 		 </div>
    </div>
      </div>

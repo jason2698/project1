@@ -44,7 +44,7 @@ public class PaymentController {
 		
 		m.addAttribute("addr", user.getAddress());
 		
-		return "OrderConfirm";
+		return "Ordeconfirm";
 	}
 	
 	@RequestMapping("/payment")
@@ -74,7 +74,7 @@ public class PaymentController {
 		
 		m.addAttribute("addr", user.getAddress());
 		
-		return "OrderConfirm";
+		return "Orderconfirm";
 	}
 	
 	@RequestMapping(value="/pay",method=RequestMethod.POST)
@@ -91,7 +91,7 @@ public class PaymentController {
 		order.setUsername(username);
 		order.setOrderDate(new java.util.Date());
 		order.setPmode(pmode);
-		order.setShoppingAmount(grandTotal);
+		//order.setShoppingAmount(grandTotal);
 		
 		orderDAO.saveOrder(order);
 		
@@ -104,7 +104,7 @@ public class PaymentController {
 		else
 		{
 			System.out.println("Not Completed");
-			return "cart";
+			return "Cart";
 		}
 	}
 	

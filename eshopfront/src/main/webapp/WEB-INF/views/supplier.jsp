@@ -26,10 +26,12 @@
 					<td><input type="text" name="supDesc" style="border-radius: 10px;color:black"/></td>
 				</tr>
 				<tr>
-					<td colspan="2"><center>
+					<td colspan="2"></br><center>
 							<input type="submit" value="Save Supplier" />
 						</center>
 						</td>
+						
+						
 				</tr>
 </form>
 

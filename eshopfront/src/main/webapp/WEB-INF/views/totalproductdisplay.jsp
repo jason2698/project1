@@ -12,8 +12,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body>
 <br/><br/>
+<body background="resources/images/bg1.jpg">
+
+
 <form action="<c:url value="addToCart/${product.productId}"/>" method="get">
 <center>
 <table class="table-bordered">

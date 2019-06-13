@@ -14,6 +14,12 @@ public class CartItem {
 
 int cartItemId;
 int orderId;
+public int getOrderId() {
+	return orderId;
+}
+public void setOrderId(int orderId) {
+	this.orderId = orderId;
+}
 String userName;
 int productId;
 String productName;
@@ -28,12 +34,7 @@ public int getCartItemId() {
 public void setCartItemId(int cartItemId) {
 	this.cartItemId = cartItemId;
 }
-public int getOrderId() {
-	return orderId;
-}
-public void setOrderId(int orderId) {
-	this.orderId = orderId;
-}
+
 public String getUserName() {
 	return userName;
 }

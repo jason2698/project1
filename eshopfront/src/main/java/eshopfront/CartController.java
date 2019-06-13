@@ -36,12 +36,12 @@ public class CartController
 		
 		String username=(String)session.getAttribute("username");
 		
-		List<CartItem>listCart=cartItemDAO.listCartItem(username);
+		List<CartItem>listCartItem=cartItemDAO.listCartItem(username);
 		UserDetail user=userDAO.getUserDetail(username);
 		user.setAddress(address);
 		userDAO.updateUser(user);
-		m.addAttribute("listCart",listCart);
-		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCart));
+		m.addAttribute("listCart",listCartItem);
+		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		m.addAttribute("addr",user.getAddress());
 		
 		return "OrderConfirm";
@@ -51,6 +51,7 @@ public class CartController
 	
 	
 	@RequestMapping("/totalproductdisplay/addToCart/{productId}")
+	//@RequestMapping("/addToCart/{productId}")
 	public String addCart(@RequestParam("quantity")int quantity,@PathVariable("productId")int productId,Model m, HttpSession session)
 	{
 		Product product=productDAO.getProduct(productId);
@@ -65,21 +66,19 @@ public class CartController
 		cart.setUserName(username);
 		cartItemDAO.addCart(cart);
 		List<CartItem>listCartItem=cartItemDAO.listCartItem(username);
-		m.addAttribute("listCart",listCartItem);
+		m.addAttribute("listCartItem",listCartItem);
 		m.addAttribute("grandTotal",this.calcGrandTotalPrice(listCartItem));
 		return "cart";
 	}
 	
-	@RequestMapping("/deleteCartItem/{cartItemId)")
-	public String deleteCartItem(@PathVariable("cartItemId")int cartItemId,Model m,HttpSession session)
+	@RequestMapping("/deleteCartItem/{cartItemId}")
+	public String deleteCart(@PathVariable("cartItemId")int cartItemId,Model m, HttpSession session)
 	{
 		CartItem cart=cartItemDAO.getCart(cartItemId);
 		cartItemDAO.deleteCart(cart);
-		
 		String username=(String)session.getAttribute("username");
-		
-		List<CartItem> listCartItem=cartItemDAO.listCartItem(username);
-		m.addAttribute("listCartItem", listCartItem);
+		List<CartItem>listCartItem=cartItemDAO.listCartItem(username);
+		m.addAttribute("listCartItem",listCartItem);
 		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		
 		return "cart";
@@ -95,7 +94,7 @@ public class CartController
 		UserDetail user=userDAO.getUserDetail(username);
 		
 		System.out.println("from cart contoller "+user);
-		m.addAttribute("cartItems", listCartItem);
+		m.addAttribute("listCartItem", listCartItem);
 		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		m.addAttribute("address",user.getAddress());
 				
@@ -104,7 +103,7 @@ public class CartController
 	}
 	
 	@RequestMapping("/updateCartItem/{cartItemId}")
-    public String updateCartItem(@PathVariable("cartItemId")int cartItemId,@RequestParam("quantity")int quantity,Model m,HttpSession session)
+    public String updateCart(@PathVariable("cartItemId")int cartItemId,@RequestParam("quantity")int quantity,Model m,HttpSession session)
     {
 		CartItem cart=cartItemDAO.getCart(cartItemId);
 		cart.setQuantity(quantity);
@@ -112,9 +111,9 @@ public class CartController
 		cartItemDAO.updateCart(cart);
 		
 		String username=(String)session.getAttribute("username");
-		
 		List<CartItem> listCartItem=cartItemDAO.listCartItem(username);
-		m.addAttribute("cartItems", listCartItem);
+		
+		m.addAttribute("listCartItem", listCartItem);
 		m.addAttribute("grandTotal", this.calcGrandTotalPrice(listCartItem));
 		
 		return "cart";
