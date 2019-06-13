@@ -18,7 +18,7 @@ public class CartItemDAOImpl implements CartItemDAO{
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Override
+	
 	public boolean addCart(CartItem cart) {
 		try
 		{
@@ -33,7 +33,7 @@ public class CartItemDAOImpl implements CartItemDAO{
 		}
 	}
 
-	@Override
+	
 	public boolean deleteCart(CartItem cart) {
 		try
 		{
@@ -47,7 +47,7 @@ public class CartItemDAOImpl implements CartItemDAO{
 		}
 	}
 
-	@Override
+	
 	public boolean updateCart(CartItem cart) {
 		try
 		{
@@ -61,7 +61,7 @@ public class CartItemDAOImpl implements CartItemDAO{
 		}
 	}
 
-	@Override
+
 	public CartItem getCart(int cartItemId) {
 		Session session=sessionFactory.openSession();
 		CartItem cart=(CartItem) session.get(CartItem.class, cartItemId);
@@ -69,11 +69,13 @@ public class CartItemDAOImpl implements CartItemDAO{
 		return cart;
 	}
 
-	@Override
+	
 	public List <CartItem> listCartItem(String username) {
 		Session session=sessionFactory.openSession();
-		Query query=session.createQuery("from CartItem");
+		Query query=session.createQuery("from CartItem where username=:username");
+		query.setParameter("username", username);
 		List<CartItem> listCartItem=query.list();
+		
 		session.close();
 		return  listCartItem;
 	}
