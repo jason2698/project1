@@ -6,6 +6,19 @@
 <%@include file="Header.jsp"%>
 <html>
 <head>
+<style type="text/css">
+table {
+
+}
+th {
+
+}
+td {
+height:25px;
+padding:5px;
+text-align:left;
+}
+</style>
 <meta charset=ISO-8859-1">
 </head>
 <body background="resources/images/bg.jpg">

@@ -18,7 +18,7 @@
 
 <form action="<c:url value="addToCart/${product.productId}"/>" method="get">
 <center>
-<table class="table-bordered">
+<table class="table-condensed">
 <tr>
     <td rowspan="7">
   

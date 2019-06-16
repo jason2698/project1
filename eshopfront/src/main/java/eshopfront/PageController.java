@@ -43,5 +43,13 @@ public class PageController
 	{
 		return "ContactUs";
 	}
+
+@RequestMapping("/contactmessage")
+
+	public String showcontactmessage()
+	{
+		return "Greetings";
+	}
+
 }
 

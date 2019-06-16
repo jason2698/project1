@@ -13,7 +13,7 @@
  .navbar-header {
  padding-top: 0;
  padding-bottom: 0;
- height: 35px;
+ height: 40px;
 
  }
  
@@ -23,7 +23,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">ESHOP</a>
+      <a class="navbar-brand" href="/eshopfront">ESHOP</a>
     </div>
 
 <c:if test="${!sessionScope.loggedIn}">

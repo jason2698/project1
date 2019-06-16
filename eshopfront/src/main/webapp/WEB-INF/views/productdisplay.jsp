@@ -18,7 +18,8 @@
 
  
  </a>
-
+ <a href="<c:url value="totalproductdisplay/${product.productId}"/>" class="thumbnail" align="center" style="color:black">${product.productName}</a>
+ 
 </div>
 
  </c:forEach>   

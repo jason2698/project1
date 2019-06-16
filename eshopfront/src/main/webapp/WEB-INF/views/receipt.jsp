@@ -20,7 +20,7 @@
                         <em>Date: <%=new java.util.Date() %> </em>
                     </p>
                     <p>
-                        <em>OrderId:ESHOP${OrderDetail.orderId} </em>
+                        <em>OrderId:${orderData} </em>
                     </p>
                 </div>
             </div>

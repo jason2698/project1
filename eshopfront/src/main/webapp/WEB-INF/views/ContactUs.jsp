@@ -81,7 +81,7 @@ input[type=submit]:hover {
       <img src="resources/images/in1.jpg" style="width:100%"> 
     </div>
     <div class="column">
-      <form action="/action_page.php" target="_blank">
+      <form action="<c:url value='/contactmessage'/>" method="post">
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder="Your name..">
         <label for="lname">Last Name</label>
@@ -99,3 +99,5 @@ input[type=submit]:hover {
 
 </body>
 </html>
+
+<%@include file="Footer.jsp" %>

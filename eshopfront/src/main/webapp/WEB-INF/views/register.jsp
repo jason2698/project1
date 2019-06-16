@@ -108,7 +108,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 .input-container {
   display: -ms-flexbox; /* IE10 */
   display: flex;
-  width: 100%;
+  width: 50%;
   margin-bottom: 15px;
 }
 
@@ -137,7 +137,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
   padding: 15px 20px;
   border: none;
   cursor: pointer;
-  width: 100%;
+  width: 50%;
   opacity: 0.9;
 }
 
@@ -146,10 +146,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 </style>
 </head>
-<body>
+<body background="resources/images/bg4.jpg">
 
 <form:form method="POST" action="addUser" modelAttribute="UserDetail">
-  <h2>Register Form</h2>
+<center>
+  <h2 style="color:white">Register Form</h2>
   
   <div class="input-container">
     <i class="fa fa-user icon"></i>
@@ -182,7 +183,9 @@ body {font-family: Arial, Helvetica, sans-serif;}
   </div>
 
   <button type="submit" class="btn">Register</button>
+  </center>
 </form:form>
+
 
 </body>
 </html>

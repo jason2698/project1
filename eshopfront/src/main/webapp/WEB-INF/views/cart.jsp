@@ -21,7 +21,7 @@
         <div class="col-12">
             <div class="table-responsive">
                 <table class="table table-striped">
-
+z
        <thead>
          	<tr>
                   <th scope="col">SL #</th>

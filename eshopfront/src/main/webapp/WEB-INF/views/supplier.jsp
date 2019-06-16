@@ -4,9 +4,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+table {
+
+}
+th {
+
+}
+td {
+height:25px;
+padding:5px;
+text-align:left;
+}
+</style>
 <meta charset="ISO-8859-1">
 </head>
-<body background="resources/images/bg1.jpg">
+<body background="resources/images/bg.jpg">
 
 	<h2 align="center">Supplier Page</h2>
 

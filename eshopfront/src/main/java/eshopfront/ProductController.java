@@ -8,6 +8,9 @@ import java.io.FileOutputStream;
 import java.util.LinkedHashMap;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ResourceLoaderAware;
+import org.springframework.core.io.Resource;
+import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,7 +28,7 @@ import Firstproject.eshop.Model.Product;
 import Firstproject.eshop.Model.Supplier;
 
 @Controller
-public class ProductController 
+public class ProductController  implements ResourceLoaderAware 
 {
 	@Autowired
 	 CategoryDAO categoryDAO;
@@ -35,6 +38,16 @@ public class ProductController
 	 
 	 @Autowired
 	 SupplierDAO supplierDAO;
+	 
+	 private ResourceLoader resourceLoader;
+		
+		public void setResourceLoader(ResourceLoader resourceLoader) {
+			this.resourceLoader = resourceLoader;
+		}
+			
+		public Resource getResource(String location){
+			return resourceLoader.getResource(location);
+		}
 	 
 	 @RequestMapping("/product")
 	 public String showProduct(Model m)
@@ -53,6 +66,7 @@ public class ProductController
 		
 		  return "product";
 	 }
+	 
 	@RequestMapping(value="/InsertProduct",method=RequestMethod.POST)
 	public String insertProduct(@ModelAttribute("Product")Product product,Model m,@RequestParam("pimage")MultipartFile filedet )
 	{
@@ -91,6 +105,14 @@ public class ProductController
 			m.addAttribute("errorInfo","Error occured trying to upload image");
 
 		}
+		if (!filedet.isEmpty()) {
+	        try {
+	        	filedet.transferTo(resourceLoader.getResource("WEB-INF/resources/images/"+product.getProductId()+".jpg").getFile());
+
+	        } catch (Exception e) {
+	            throw new RuntimeException("Product Image saving failed", e);
+	        }
+	    }
 	    List<Product> listProducts=productDAO.listProducts();
 		m.addAttribute("productList",listProducts);
 		m.addAttribute("pageinfo","Manage Product");
@@ -177,7 +199,7 @@ public class ProductController
 		m.addAttribute("productList",listProducts);
 		m.addAttribute("pageinfo","Manage Product");
 		
-		return "product";
+		return "redirect:/product";
 	}
 
 	@RequestMapping(value="/editProduct/{productId}")

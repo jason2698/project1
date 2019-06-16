@@ -17,9 +17,9 @@
   }
   </style>
 </head>
-<body background="resources/images/bg1.jpg">
+<body background="resources/images/bg11.jpg">
 
-<h4 align="right"> Welcome User</h4>
+<h4 align="right"> Welcome ${sessionScope.username}</h4>
 <div class="container">
   <br>
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -35,7 +35,7 @@
     <div class="carousel-inner" role="listbox">
 
       <div class="item active">
-      <img src='<c:url value='resources/images/ph1.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+      <img src='<c:url value='resources/images/in71.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
         <div class="carousel-caption">
        
         </div>
@@ -49,13 +49,13 @@
       </div>
     
       <div class="item">
-       <img src='<c:url value='resources/images/ph3.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+       <img src='<c:url value='resources/images/in10.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
         <div class="carousel-caption">
         </div>
       </div>
 
       <div class="item">
-        <img src='<c:url value='resources/images/ph6.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
+        <img src='<c:url value='resources/images/in8.jpg'></c:url>' alt= "Mobiles" height="460" width="345" > 
         <div class="carousel-caption">
  
         </div>
