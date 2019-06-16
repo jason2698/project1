@@ -16,7 +16,7 @@ public class UserDAOImpl implements UserDAO
 	@Autowired
 	SessionFactory sessionFactory;
 	
-	@Override
+	
 	public boolean registerUser(UserDetail user) 
 	{
 		try
@@ -29,8 +29,21 @@ public class UserDAOImpl implements UserDAO
 		return false;
 		}
 	}
+	
+	public boolean deleteUser(UserDetail user) 
+	{
+		try
+		{
+			sessionFactory.getCurrentSession().update(user);
+			return true;
+		}
+		catch (Exception e)
+		{
+		return false;
+		}
+	}
 
-	@Override
+	
 	public boolean updateUser(UserDetail user) 
 	{
 		try
@@ -45,7 +58,8 @@ public class UserDAOImpl implements UserDAO
 		
 	}
 
-	@Override
+
+	
 	public UserDetail getUserDetail(String username) 
 	{
 		Session session=sessionFactory.openSession();
@@ -53,5 +67,6 @@ public class UserDAOImpl implements UserDAO
 		session.close();
 		return user;
 	}
+
 
 }

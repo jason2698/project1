@@ -9,6 +9,14 @@ import javax.persistence.Table;
 public class UserDetail 
 {
 @Id
+//@GeneratedValue
+//int userId;
+//public int getUserId() {
+//	return userId;
+//}
+//public void setUserId(int userId) {
+//	this.userId = userId;
+//}
 String username;
 String password;
 String customername;
