@@ -73,7 +73,7 @@ public class ProductDAOImpl implements ProductDAO
 		return listProducts;
 	}
 
-	@Override
+
 	public List<Product> getProductListCategoryWise(int categoryId) {
 		Session session=sessionFactory.openSession();
 		Query query=session.createQuery("from Product where categoryId=:catId");
